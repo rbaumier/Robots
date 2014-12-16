@@ -5,6 +5,6 @@ public class RobotPolluter extends Robot {
   }
 
   public void pollutes() {
-    world.board[x][y] = 'X';
+    world.board[x][y] = -1;
   }
 }
