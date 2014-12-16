@@ -7,7 +7,6 @@ public class PolluterJumper extends RobotPolluter {
   }
 
   public void roam() {
-    //TODO : question 11
+    //TODO : question 11. = cavaliers échecs
   }
-
 }

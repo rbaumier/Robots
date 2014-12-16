@@ -9,6 +9,6 @@ public class RobotCleaner extends Robot {
   }
 
   public void roam() {
-    //TODO : boustrophédon mode with start at (0,0)
+    //TODO : boustrophédon mode with start at (0,0) and clean every case
   }
 }
