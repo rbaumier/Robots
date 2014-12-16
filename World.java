@@ -1,9 +1,10 @@
 public class World {
+  int length;
+  int widht;
   int[][] board;
-  public World(){}
 
-  public World(int longueur, int largeur) {
-    board = new int[longueur][largeur];
+  public World(int length, int widht) {
+    board = new int[length][width];
     setDefaultValues();
   }
 
@@ -23,13 +24,12 @@ public class World {
     board[x][y] = -1;
   }
 
-  public void use(int x, int y, int numRobot) {
-    board[x][y] = numRobot;
+  public void use(int x, int y, int id) {
+    board[x][y] = id;
   }
 
   public String toString() {
     //case X : dirty, "." clean
-    return "toImplement";
   }
 
   public void pollutes(int x, int y) {
