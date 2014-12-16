@@ -1,4 +1,5 @@
 public abstract class Robot {
+  public int id;
   public int x;
   public int y;
   public World world;
@@ -9,8 +10,8 @@ public abstract class Robot {
     world = null;
   }
 
-  public Robot(int num, int x, int y, World world) {
-    num = num;
+  public Robot(int id, int x, int y, World world) {
+    id = id;
     x = x;
     y = y;
     world = world;
