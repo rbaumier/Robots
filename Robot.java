@@ -1,8 +1,8 @@
 public abstract class Robot {
-  public int id;
-  public int x;
-  public int y;
-  public World world;
+  private int id;
+  private int x;
+  private int y;
+  private World world;
 
   public Robot() {
     x = 0;
