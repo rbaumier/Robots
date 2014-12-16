@@ -4,16 +4,16 @@ public class World {
   private int[][] board;
 
   public World(int length, int widht) {
-    board = new int[length][width];
-    setDefaultValues();
+    board = setDefaultValues(new int[length][width]);
   }
 
-  public void setDefaultValues() {
+  public int[][] setDefaultValues(int[][] board) {
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[0].length; j++) {
         board[i][j] = 0;
       }
     }
+    return board;
   }
 
   public boolean isFree(int x, int y) {
