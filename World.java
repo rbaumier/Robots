@@ -1,7 +1,7 @@
 public class World {
-  int length;
-  int widht;
-  int[][] board;
+  private int length;
+  private int widht;
+  private int[][] board;
 
   public World(int length, int widht) {
     board = new int[length][width];
@@ -11,7 +11,7 @@ public class World {
   public void setDefaultValues() {
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[0].length; j++) {
-        board[i][j] = -1;
+        board[i][j] = 0;
       }
     }
   }
@@ -21,7 +21,7 @@ public class World {
   }
 
   public void setFree(int x, int y) {
-    board[x][y] = -1;
+    board[x][y] = 0;
   }
 
   public void use(int x, int y, int id) {
