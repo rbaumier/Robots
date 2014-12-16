@@ -17,11 +17,7 @@ public class World {
   }
 
   public boolean isFree(int x, int y) {
-    return board[x][y] == -1;
-  }
-
-  public void setFree(int x, int y) {
-    board[x][y] = 0;
+    return board[x][y] <= 0;
   }
 
   public void use(int x, int y, int id) {
@@ -32,7 +28,7 @@ public class World {
     //case X : dirty, "." clean
   }
 
-  public void pollutes(int x, int y) {
+  public void pollute(int x, int y) {
     board[x][y] = -1;
   }
 
