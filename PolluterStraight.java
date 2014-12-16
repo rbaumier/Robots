@@ -1,6 +1,5 @@
 public class PolluterStraight extends RobotPolluter {
   public int startCol;
-  public PolluterStraight() {}
 
   public PolluterStraight(int num, int x, int y, World world, int startCol) {
     super(num, x, y, world);
