@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class World {
-  private int width;
-  private int height;
-  private int[][] board;
-  private List<Robot> robots = new ArrayList<Robot>();
+  public int width;
+  public int height;
+  public Cell[][] board;
+  public List<Robot> robots = new ArrayList<Robot>();
 
   public World(int width, int height) {
     if(hasCorrectSize(width, height)) {
       this.width = width;
       this.height = height;
-      board = setDefaultValues(new int[height][width]);
+      board = fill(new Cell[height][width]);
     } else {
       System.out.println("La taille du tableau depasse la taille limite (20,30)");
     }
@@ -18,7 +21,7 @@ public class World {
     return width <= 30 && height <= 20;
   }
 
-  public int[][] setDefaultValues(int[][] board) {
+  public Cell[][] fill(Cell[][] board) {
     for (int i = 0; i < this.height; i++) {
       for (int j = 0; j < this.width; j++) {
         board[i][j] = new Cell(i,j);
@@ -40,7 +43,7 @@ public class World {
     for (int i = 0; i < this.height; i++) {
       System.out.print("|");
       for (int j = 0; j < this.width; j++) {
-        System.out.print(" " + board[i][j] + " ");
+        System.out.print(" " + board[i][j].toString() + " ");
       }
       System.out.print("|");
       System.out.println("");

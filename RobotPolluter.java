@@ -1,13 +1,12 @@
 public class RobotPolluter extends Robot {
-  private int startCol;
+  public int startCol;
 
-  public RobotPolluter(int num, int x, int y, World world, int startCol) {
-    super(num, x, y, world);
-    startCol = startCol; // WTF ? diff between x and startCol ??
+  public RobotPolluter(int num, int x, int y) {
+    super(num, x, y);
   }
 
   public void pollutes() {
-    world.board[x][y] = -1;
+    world.board[x][y].state = -1;
   }
 
   public void roam() {
