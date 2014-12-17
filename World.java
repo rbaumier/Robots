@@ -1,15 +1,15 @@
 public class World {
-  private int length;
   private int widht;
+  private int length;
   private int[][] board;
 
   public World(int length, int widht) {
-    board = setDefaultValues(new int[length][width]);
+    board = setDefaultValues(new int[width][length]);
   }
 
   public int[][] setDefaultValues(int[][] board) {
-    for (int i = 0; i < board.length; i++) {
-      for (int j = 0; j < board[0].length; j++) {
+    for (int i = 0; i < width; i++) {
+      for (int j = 0; j < length; j++) {
         board[i][j] = 0;
       }
     }
