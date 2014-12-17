@@ -1,35 +1,40 @@
 public class Cell {
   public int x;
   public int y;
-  public int state;
+  public String state;
+  public int show;
 
   public Cell(int x, int y) {
     this.x = x;
     this.y = y;
-    this.state = 0;
+    this.state = "free";
+    this.show = 0;
   }
 
   public boolean isAvailable() {
-    return this.state == 0;
+    return this.state == "free";
   }
 
-  public void use(int x, int y, int id) {
-    this.state = id;
+  public void use(int id) {
+    this.show = id;
+    this.state = "busy";
   }
 
-  public void pollute(int x, int y) {
-    this.state = -1;
+  public void pollute() {
+    this.show = -1;
+    this.state = "polluted";
   }
 
-  public void clean(int x, int y) {
-    this.state = 0;
+  public void clean() {
+    this.state = "free";
+    this.show = 0;
   }
 
-  public boolean isPolluted(int x, int y) {
-    return this.state == -1;
+  public boolean isPolluted() {
+    return this.state == "polluted";
   }
 
   public String toString() {
-    return Integer.toString(this.state);
+    return Integer.toString(this.show);
   }
 }

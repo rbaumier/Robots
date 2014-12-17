@@ -6,7 +6,7 @@ public class RobotPolluter extends Robot {
   }
 
   public void pollutes() {
-    world.board[x][y].state = -1;
+    world.board[x][y].clean();
   }
 
   public void roam() {
