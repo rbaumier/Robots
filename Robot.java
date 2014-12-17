@@ -17,7 +17,7 @@ public abstract class Robot {
     world = world;
   }
 
-  public void goTo(int x, int y) {
+  public void move(int x, int y) {
     if(world.isFree(x, y)) {
       x = x;
       y = y;

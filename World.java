@@ -1,18 +1,26 @@
-
 public class World {
   private int width;
-  private int length;
+  private int height;
   private int[][] board;
 
-  public World(int length, int width) {
-    this.width = width;
-    this.length = length;
-    board = setDefaultValues(new int[width][length]);
+  public World(int width, int height) {
+    if(hasCorrectSize(width, height)) {
+      this.width = width;
+      this.height = height;
+      board = setDefaultValues(new int[height][width]);
+    } else {
+      System.out.println("La taille du tableau depasse la taille limite (20,30)");
+    }
+  }
+
+  public static boolean hasCorrectSize(int width, int height) {
+    System.out.println("width:" + width + " height: " + height);
+    return width <= 30 && height <= 20;
   }
 
   public int[][] setDefaultValues(int[][] board) {
-    for (int i = 0; i < this.width; i++) {
-      for (int j = 0; j < this.length; j++) {
+    for (int i = 0; i < this.height; i++) {
+      for (int j = 0; j < this.width; j++) {
         board[i][j] = 0;
       }
     }
@@ -37,9 +45,9 @@ public class World {
 
   public void show() {
     System.out.println(repeat("---", this.width) + "-");
-    for (int i = 0; i < this.width; ++i) {
+    for (int i = 0; i < this.height; i++) {
       System.out.print("|");
-      for (int j = 0; j < this.length; ++j) {
+      for (int j = 0; j < this.width; j++) {
         System.out.print(" " + board[i][j] + " ");
       }
       System.out.print("|");
@@ -47,7 +55,6 @@ public class World {
     }
     System.out.println(repeat("---", this.width) + "-");
   }
-
 
   public void pollute(int x, int y) {
     board[x][y] = -1;
@@ -62,7 +69,7 @@ public class World {
   }
 
   public static void main(String[] args) {
-    World board = new World(10,10);
+    World board = new World(25,15);
     board.show();
   }
 }
