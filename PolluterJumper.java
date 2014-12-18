@@ -5,15 +5,15 @@ public class PolluterJumper extends RobotPolluter {
     super(num, x, y, world);
   }
 
-  public void roam(int speed) {
+  public void roam(int sleepTime) {
 
     //TODO : question 11. = cavaliers echecs
     for (int i = 0; i < this.world.height; i++) {
       for (int j = 0; j < this.world.width; j++) {
         this.world.setPosition(i,j,this);
-        sleep(speed);
+        sleep(sleepTime);
       }
     }
-    roam(speed);
+    roam(sleepTime);
   }
 }

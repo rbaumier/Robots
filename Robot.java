@@ -15,13 +15,13 @@ public abstract class Robot extends Thread{
     roam(500);
   }
 
-  public void sleep(int speed) {
+  public void sleep(int sleepTime) {
     try {
-      Thread.sleep(speed);
+      Thread.sleep(sleepTime);
     } catch(InterruptedException ex) {
       Thread.currentThread().interrupt();
     }
   }
 
-  public void roam(int speed) {}
+  public void roam(int sleepTime) {}
 }

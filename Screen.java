@@ -17,7 +17,7 @@ public class Screen extends Thread {
     return str;
   }
 
-  public void show(int speed) {
+  public void show(int sleepTime) {
     System.out.println(repeat("---", this.world.width) + "-");
     for (int i = 0; i < this.world.height; i++) {
       System.out.print("|");
@@ -30,10 +30,10 @@ public class Screen extends Thread {
     System.out.println(repeat("---", this.world.width) + "-");
 
     try {
-      Thread.sleep(speed);
+      Thread.sleep(sleepTime);
     } catch(InterruptedException ex) {
       Thread.currentThread().interrupt();
     }
-    show(speed);
+    show(sleepTime);
   }
 }

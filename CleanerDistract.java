@@ -4,9 +4,9 @@ public class CleanerDistract extends RobotCleaner {
     super(num, x, y, world);
   }
 
-  public void roam(int speed) {
-    roamFromBottom(speed);
-    roamFromTop(speed);
-    roam(speed);
+  public void roam(int sleepTime) {
+    roamFromBottom(sleepTime);
+    roamFromTop(sleepTime);
+    roam(sleepTime);
   }
 }

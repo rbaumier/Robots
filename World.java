@@ -42,9 +42,9 @@ public class World extends Thread {
     this.board[x][y].addRobot(robot);
   }
 
-  public void enable(int speed) {
+  public void enable(int sleepTime) {
     for(Robot r : this.robots) {
-      r.roam(speed);
+      r.roam(sleepTime);
     }
   }
 

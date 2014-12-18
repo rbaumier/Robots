@@ -9,13 +9,13 @@ public class RobotPolluter extends Robot {
     world.board[x][y].clean();
   }
 
-  public void roam(int speed) {
+  public void roam(int sleepTime) {
     for (int i = this.world.height-1; i >= 0; i--) {
       for (int j = 0; j < this.world.width; j++) {
         this.world.setPosition(i,j,this);
-        sleep(speed);
+        sleep(sleepTime);
       }
     }
-    roam(speed);
+    roam(sleepTime);
   }
 }
