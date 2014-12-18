@@ -8,12 +8,8 @@ public class RobotCleaner extends Robot {
     world.board[x][y].clean();
   }
 
+  //boustrophedon
   public void roam(Cell[][] board) {
-    //boustrophedonFromTop(board);
-    //boustrophedonFromBottom(board);
-  }
-
-  public void boustrophedonFromTop(Cell[][] board) {
     for (var i = 0; i < board.length; i++) {
       if (i%2 == 0) {
         for (var j = 0; j < board.length; j++) {
@@ -25,9 +21,7 @@ public class RobotCleaner extends Robot {
         }
       }
     }
-  }
 
-  public void boustrophedonFromBottom(Cell[][] board) {
     for (var i = board.length-1; i >= 0; i--) {
       if (i%2 !== 0) {
         for (var j = 0; j < board.length; j++) {
