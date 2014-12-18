@@ -4,7 +4,8 @@ public class CleanerDistract extends RobotCleaner {
     super(num, x, y, world);
   }
 
-  public void roam() {
-    //TODO : boustrophedon mode with start at (0,0) and clean one case on two
+  public void roam(int speed) {
+    roamFromBottom(speed);
+    roamFromTop(speed);
   }
 }
