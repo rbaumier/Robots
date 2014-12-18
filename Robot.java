@@ -9,15 +9,17 @@ public abstract class Robot {
     this.x = x;
     this.y = y;
     this.world = world;
-    world.setPosition(x, y, this);
   }
 
-  // public void roam(int x, int y) {
-  //   if(world.board[x,y].isAvailable()) {
-  //     x = x;
-  //     y = y;
-  //   }
-  // }
+  public void sleep(int speed) {
+    try {
+      Thread.sleep(speed);
+    } catch(InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+  }
 
-  public void roam() {}
+  public void roam(int speed) {}
+
+
 }
