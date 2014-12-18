@@ -1,9 +1,8 @@
 public class PolluterJumper extends RobotPolluter {
   private int deltaX;
 
-  public PolluterJumper(int num, int x, int y, int deltaX) {
-    super(num, x, y);
-    this.deltaX = deltaX;
+  public PolluterJumper(int num, int x, int y, World world) {
+    super(num, x, y, world);
   }
 
   public void roam() {

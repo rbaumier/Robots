@@ -1,7 +1,7 @@
 public class RobotCleaner extends Robot {
 
-  public RobotCleaner(int num, int x, int y) {
-    super(num, x, y);
+  public RobotCleaner(int num, int x, int y, World world) {
+    super(num, x, y, world);
   }
 
   public void clean() {
@@ -10,25 +10,27 @@ public class RobotCleaner extends Robot {
 
   //boustrophedon
   public void roam(Cell[][] board) {
-    for (var i = 0; i < board.length; i++) {
+    // from top
+    for (int i = 0; i < board.length; i++) {
       if (i%2 == 0) {
-        for (var j = 0; j < board.length; j++) {
+        for (int j = 0; j < board.length; j++) {
           // System.out.println(board[i][j].show());
         }
       } else {
-        for (var k = board.length-1; k >= 0; k--) {
+        for (int k = board.length-1; k >= 0; k--) {
           // System.out.println(board[i][k].show());
         }
       }
     }
 
-    for (var i = board.length-1; i >= 0; i--) {
-      if (i%2 !== 0) {
-        for (var j = 0; j < board.length; j++) {
+    // from bottom
+    for (int i = board.length-1; i >= 0; i--) {
+      if (i%2 != 0) {
+        for (int j = 0; j < board.length; j++) {
           // System.out.println(board[i][j].show());
         }
       } else {
-        for (var k = board.length-1; k >= 0; k--) {
+        for (int k = board.length-1; k >= 0; k--) {
           // System.out.println(board[i][k].show());
         }
       }
