@@ -16,7 +16,7 @@ public class Cell {
   }
 
   public void pollute() {
-    this.show = -1;
+    this.show = 5;
     this.state = "polluted";
   }
 
