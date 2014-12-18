@@ -15,11 +15,6 @@ public class Cell {
     return this.state == "free";
   }
 
-  public void use(int id) {
-    this.show = id;
-    this.state = "busy";
-  }
-
   public void pollute() {
     this.show = -1;
     this.state = "polluted";
