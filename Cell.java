@@ -4,9 +4,7 @@ public class Cell {
   public String state;
   public int show;
 
-  public Cell(int x, int y) {
-    this.x = x;
-    this.y = y;
+  public Cell() {
     this.state = "free";
     this.show = 0;
   }

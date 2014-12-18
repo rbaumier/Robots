@@ -24,7 +24,7 @@ public class World {
   public Cell[][] fill(Cell[][] board) {
     for (int i = 0; i < this.height; i++) {
       for (int j = 0; j < this.width; j++) {
-        board[i][j] = new Cell(i,j);
+        board[i][j] = new Cell();
       }
     }
     return board;
