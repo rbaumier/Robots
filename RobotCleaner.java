@@ -5,33 +5,42 @@ public class RobotCleaner extends Robot {
   }
 
   public void clean() {
-    world.board[x][y].clean();
+    // this.world[this.x][this.y].clean();
   }
 
   //boustrophedon
-  public void roam(Cell[][] board) {
+  public void roam(int speed) {
+    System.out.println("coucou");
     // from top
-    for (int i = 0; i < board.length; i++) {
+    for (int i = 0; i < this.world.width; i++) {
       if (i%2 == 0) {
-        for (int j = 0; j < board.length; j++) {
-          // System.out.println(board[i][j].show());
+        for (int j = 0; j < this.world.width; j++) {
+          this.world.setPosition(i,j,this);
+          sleep(speed);
+          //System.out.println(this.world[i][j].show());
         }
       } else {
-        for (int k = board.length-1; k >= 0; k--) {
-          // System.out.println(board[i][k].show());
+        for (int k = this.world.width-1; k >= 0; k--) {
+          this.world.setPosition(i,k,this);
+          sleep(speed);
+          // System.out.println(this.world[i][k].show());
         }
       }
     }
 
     // from bottom
-    for (int i = board.length-1; i >= 0; i--) {
+    for (int i = this.world.width-1; i >= 0; i--) {
       if (i%2 != 0) {
-        for (int j = 0; j < board.length; j++) {
-          // System.out.println(board[i][j].show());
+        for (int j = 0; j < this.world.width; j++) {
+          this.world.setPosition(i,j,this);
+          sleep(speed);
+          // System.out.println(this.world[i][j].show());
         }
       } else {
-        for (int k = board.length-1; k >= 0; k--) {
-          // System.out.println(board[i][k].show());
+        for (int k = this.world.width-1; k >= 0; k--) {
+          this.world.setPosition(i,k,this);
+          sleep(speed);
+          // System.out.println(this.world[i][k].show());
         }
       }
     }
