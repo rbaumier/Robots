@@ -33,6 +33,7 @@ public class World {
 
   public void setPosition(int x, int y, Robot robot) {
     this.board[x][y].addRobot(robot);
+    this.show();
   }
 
   public String repeat(String toRepeat, int times) {
@@ -41,6 +42,12 @@ public class World {
       str += toRepeat;
     }
     return str;
+  }
+
+  public void enable(int speed) {
+    for(Robot r : this.robots) {
+      r.roam(speed);
+    }
   }
 
   public void show() {
@@ -69,10 +76,6 @@ public class World {
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
 
-    for(Robot r : world.robots) {
-      r.roam();
-    }
-
-    world.show();
+    world.enable(10000);
   }
 }
