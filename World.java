@@ -12,7 +12,7 @@ public class World {
       this.width = width;
       this.height = height;
       this.robots = new ArrayList<Robot>();
-      board = fill(new Cell[height][width]);
+      this.board = fill(new Cell[height][width]);
     } else {
       System.out.println("La taille du tableau depasse la taille limite (20,30)");
     }
@@ -31,6 +31,10 @@ public class World {
     return board;
   }
 
+  public void setPosition(int x, int y, Robot robot) {
+    this.board[x][y].addRobot(robot);
+  }
+
   public String repeat(String toRepeat, int times) {
     String str = "";
     for (int i = 0; i < times; i++) {
@@ -44,7 +48,7 @@ public class World {
     for (int i = 0; i < this.height; i++) {
       System.out.print("|");
       for (int j = 0; j < this.width; j++) {
-        System.out.print(" " + board[i][j].toString() + " ");
+        System.out.print(" " + this.board[i][j].toString() + " ");
       }
       System.out.print("|");
       System.out.println("");
@@ -64,6 +68,10 @@ public class World {
     world.robots.add(polluterJumper);
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
+
+    for(Robot r : world.robots) {
+      r.roam();
+    }
 
     world.show();
   }
