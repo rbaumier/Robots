@@ -3,10 +3,12 @@ public class Cell {
   public int y;
   public String state;
   public int show;
+  public Robot robot;
 
   public Cell() {
     this.state = "free";
     this.show = 0;
+    this.robot = null;
   }
 
   public boolean isAvailable() {
@@ -34,5 +36,10 @@ public class Cell {
 
   public String toString() {
     return Integer.toString(this.show);
+  }
+
+  public void addRobot(Robot robot) {
+    this.robot = robot;
+    this.show = robot.id;
   }
 }
