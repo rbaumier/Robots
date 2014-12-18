@@ -9,6 +9,7 @@ public abstract class Robot {
     this.x = x;
     this.y = y;
     this.world = world;
+    world.setPosition(x, y, this);
   }
 
   // public void roam(int x, int y) {
