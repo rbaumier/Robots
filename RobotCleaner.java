@@ -12,6 +12,7 @@ public class RobotCleaner extends Robot {
   public void roam(int speed) {
     roamFromTop(speed);
     roamFromBottom(speed);
+    roam(speed);
   }
 
   public void roamFromBottom(int speed) {

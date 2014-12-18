@@ -7,5 +7,6 @@ public class CleanerDistract extends RobotCleaner {
   public void roam(int speed) {
     roamFromBottom(speed);
     roamFromTop(speed);
+    roam(speed);
   }
 }

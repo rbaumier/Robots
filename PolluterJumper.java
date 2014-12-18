@@ -6,6 +6,7 @@ public class PolluterJumper extends RobotPolluter {
   }
 
   public void roam(int speed) {
+
     //TODO : question 11. = cavaliers echecs
     for (int i = 0; i < this.world.height; i++) {
       for (int j = 0; j < this.world.width; j++) {
@@ -13,5 +14,6 @@ public class PolluterJumper extends RobotPolluter {
         sleep(speed);
       }
     }
+    roam(speed);
   }
 }

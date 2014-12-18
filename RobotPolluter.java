@@ -16,5 +16,6 @@ public class RobotPolluter extends Robot {
         sleep(speed);
       }
     }
+    roam(speed);
   }
 }

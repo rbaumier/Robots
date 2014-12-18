@@ -1,4 +1,4 @@
-public abstract class Robot {
+public abstract class Robot extends Thread{
   public int id;
   public int x;
   public int y;
@@ -11,6 +11,10 @@ public abstract class Robot {
     this.world = world;
   }
 
+  public void run() {
+    roam(500);
+  }
+
   public void sleep(int speed) {
     try {
       Thread.sleep(speed);
@@ -20,6 +24,4 @@ public abstract class Robot {
   }
 
   public void roam(int speed) {}
-
-
 }
