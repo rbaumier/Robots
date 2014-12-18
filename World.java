@@ -32,6 +32,13 @@ public class World {
   }
 
   public void setPosition(int x, int y, Robot robot) {
+    for (int i = 0; i < this.height; i++) {
+      for (int j = 0; j < this.width; j++) {
+        if(board[i][j].show == robot.id) {
+          board[i][j].show = 0;
+        }
+      }
+    }
     this.board[x][y].addRobot(robot);
     this.show();
   }
@@ -64,7 +71,7 @@ public class World {
   }
 
   public static void main(String[] args) {
-    World world = new World(25,15);
+    World world = new World(7,4);
 
     RobotPolluter robotPolluter = new RobotPolluter(1, 0, 0,  world);
     PolluterJumper polluterJumper = new PolluterJumper(2, 0, world.width-1, world);
@@ -76,6 +83,6 @@ public class World {
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
 
-    world.enable(10000);
+    world.enable(300);
   }
 }
