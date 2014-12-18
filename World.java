@@ -83,6 +83,6 @@ public class World {
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
 
-    world.enable(300);
+    world.enable(Integer.parseInt(args[0]));
   }
 }
