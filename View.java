@@ -1,15 +1,15 @@
-public class Screen extends Thread {
+public class View {
   public World world;
 
-  public Screen(){}
+  public View(){}
 
-  public Screen(World w) {
+  public View(World w) {
     world = w;
   }
 
-  public void run() {
-    show(500);
-  }
+  // public void run() {
+  //   show(500);
+  // }
 
   public String repeat(String toRepeat, int times) {
     String str = "";
@@ -19,7 +19,7 @@ public class Screen extends Thread {
     return str;
   }
 
-  public void show(int sleepTime) {
+  public void refresh() {
     System.out.println(repeat("---", world.width) + "-");
     for (int i = 0; i < world.height; i++) {
       System.out.print("|");
@@ -30,12 +30,5 @@ public class Screen extends Thread {
       System.out.println("");
     }
     System.out.println(repeat("---", world.width) + "-");
-
-    try {
-      Thread.sleep(sleepTime);
-    } catch(InterruptedException ex) {
-      Thread.currentThread().interrupt();
-    }
-    show(sleepTime);
   }
 }
