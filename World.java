@@ -42,35 +42,20 @@ public class World extends Thread {
     this.board[x][y].addRobot(robot);
   }
 
-  public void enable(int sleepTime) {
-    for(Robot r : this.robots) {
-      r.roam(sleepTime);
-    }
-  }
-
   public static void main(String[] args) {
     World world = new World(7,4);
 
     RobotPolluter robotPolluter = new RobotPolluter(1, 0, 0,  world);
-    robotPolluter.start();
-
     PolluterJumper polluterJumper = new PolluterJumper(2, 0, world.width-1, world);
-    polluterJumper.start();
-
     RobotCleaner robotCleaner = new RobotCleaner(3, world.height-1, 0, world);
-    robotCleaner.start();
-
     CleanerDistract cleanerDistract = new CleanerDistract(4, world.height-1, world.width-1, world);
-    cleanerDistract.start();
 
-    Screen screen = new Screen(world);
-    screen.start();
+    Timer screen = new Timer(world);
 
     world.robots.add(robotPolluter);
     world.robots.add(polluterJumper);
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
-    world.enable(Integer.parseInt(args[0]));
 
     System.out.println("plop");
   }
