@@ -4,6 +4,8 @@ public abstract class Robot extends Thread{
   public int y;
   public World world;
 
+  public Robot(){};
+
   public Robot(int num, int coordX, int coordY, World w) {
     id = num;
     x = coordX;

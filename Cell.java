@@ -5,6 +5,8 @@ public class Cell {
   public int show;
   public Robot robot;
 
+  public Cell(){};
+
   public Cell() {
     state = "free";
     show = 0;

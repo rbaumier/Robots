@@ -1,6 +1,8 @@
 public class Screen extends Thread {
   public World world;
 
+  public Screen(){}
+
   public Screen(World w) {
     world = w;
   }

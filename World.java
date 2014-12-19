@@ -7,6 +7,8 @@ public class World extends Thread {
   public Cell[][] board;
   public List<Robot> robots;
 
+  public World(){};
+
   public World(int x, int y) {
     if(hasCorrectSize(x, y)) {
       width = x;
