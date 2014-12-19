@@ -6,35 +6,35 @@ public class Cell {
   public Robot robot;
 
   public Cell() {
-    this.state = "free";
-    this.show = 0;
-    this.robot = null;
+    state = "free";
+    show = 0;
+    robot = null;
   }
 
   public boolean isAvailable() {
-    return this.state == "free";
+    return state == "free";
   }
 
   public void pollute() {
-    this.show = 5;
-    this.state = "polluted";
+    show = 5;
+    state = "polluted";
   }
 
   public void clean() {
-    this.state = "free";
-    this.show = 0;
+    state = "free";
+    show = 0;
   }
 
   public boolean isPolluted() {
-    return this.state == "polluted";
+    return state == "polluted";
   }
 
   public String toString() {
-    return Integer.toString(this.show);
+    return Integer.toString(show);
   }
 
   public void addRobot(Robot robot) {
-    this.robot = robot;
-    this.show = robot.id;
+    robot = robot;
+    show = robot.id;
   }
 }

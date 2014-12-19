@@ -4,11 +4,11 @@ public abstract class Robot extends Thread{
   public int y;
   public World world;
 
-  public Robot(int id, int x, int y, World world) {
-    this.id = id;
-    this.x = x;
-    this.y = y;
-    this.world = world;
+  public Robot(int num, int coordX, int coordY, World w) {
+    id = num;
+    x = coordX;
+    y = coordY;
+    world = w;
   }
 
   public void move() {}

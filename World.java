@@ -7,12 +7,12 @@ public class World extends Thread {
   public Cell[][] board;
   public List<Robot> robots;
 
-  public World(int width, int height) {
-    if(hasCorrectSize(width, height)) {
-      this.width = width;
-      this.height = height;
-      this.robots = new ArrayList<Robot>();
-      this.board = fill(new Cell[height][width]);
+  public World(int x, int y) {
+    if(hasCorrectSize(x, y)) {
+      width = x;
+      height = y;
+      robots = new ArrayList<Robot>();
+      board = fill(new Cell[height][width]);
     } else {
       System.out.println("La taille du tableau depasse la taille limite (20,30)");
     }
@@ -23,8 +23,8 @@ public class World extends Thread {
   }
 
   public Cell[][] fill(Cell[][] board) {
-    for (int i = 0; i < this.height; i++) {
-      for (int j = 0; j < this.width; j++) {
+    for (int i = 0; i < height; i++) {
+      for (int j = 0; j < width; j++) {
         board[i][j] = new Cell();
       }
     }
@@ -32,14 +32,14 @@ public class World extends Thread {
   }
 
   public void setPosition(int x, int y, Robot robot) {
-    for (int i = 0; i < this.height; i++) {
-      for (int j = 0; j < this.width; j++) {
+    for (int i = 0; i < height; i++) {
+      for (int j = 0; j < width; j++) {
         if(board[i][j].show == robot.id) {
           board[i][j].show = 0;
         }
       }
     }
-    this.board[x][y].addRobot(robot);
+    board[x][y].addRobot(robot);
   }
 
   public static void main(String[] args) {
