@@ -5,7 +5,7 @@ public class World extends Thread {
   public int width;
   public int height;
   public Cell[][] board;
-  public List<Robot> robots;
+  public ArrayList<Robot> robots;
 
   public World(){};
 
@@ -57,7 +57,7 @@ public class World extends Thread {
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
 
-    Controller ctrl = new Controller();
+    Controller ctrl = new Controller(world);
 
     Timer timer = new Timer(ctrl);
     timer.start();
