@@ -45,6 +45,8 @@ public class World extends Thread {
   }
 
   public static void main(String[] args) {
+    String speed = args.length == 0 ? "100" : args[0];
+
     World world = new World(7,4);
     View view = new View(world);
 
@@ -61,6 +63,6 @@ public class World extends Thread {
     Controller ctrl = new Controller(world, view);
 
     Timer timer = new Timer(ctrl);
-    timer.start();
+    timer.start(Integer.parseInt(speed));
   }
 }
