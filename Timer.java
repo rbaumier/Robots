@@ -1,14 +1,19 @@
-public class Timer  {
-  public Timer() {
+public class Timer extends Thread {
+  public Controller ctrl;
 
+  public Timer(Controller controller) {
+    ctrl = controller;
   }
 
   public void run() {
-
-  }
-
-  public void update()  {
-
+    while(true) {
+      ctrl.update();
+      try {
+        Thread.sleep(1000);
+      } catch(InterruptedException ex) {
+        Thread.currentThread().interrupt();
+      }
+    }
   }
 }
 
