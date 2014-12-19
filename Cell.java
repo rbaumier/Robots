@@ -2,12 +2,12 @@ public class Cell {
   public int x;
   public int y;
   public String state;
-  public int show;
+  public String show;
   public Robot robot;
 
   public Cell() {
     state = "free";
-    show = 0;
+    show = "0";
     robot = null;
   }
 
@@ -16,25 +16,21 @@ public class Cell {
   }
 
   public void pollute() {
-    show = 5;
+    show = "5";
     state = "polluted";
   }
 
   public void clean() {
     state = "free";
-    show = 0;
+    show = "0";
   }
 
   public boolean isPolluted() {
     return state == "polluted";
   }
 
-  public String toString() {
-    return Integer.toString(show);
-  }
-
   public void addRobot(Robot robot) {
     robot = robot;
-    show = robot.id;
+    show = Integer.toString(robot.id);
   }
 }

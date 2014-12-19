@@ -44,8 +44,8 @@ public class World extends Thread {
   public void setPosition(int x, int y, Robot robot) {
     for (int i = 0; i < height; i++) {
       for (int j = 0; j < width; j++) {
-        if(board[i][j].show == robot.id) {
-          board[i][j].show = 0;
+        if(Integer.parseInt(board[i][j].show) == robot.id) {
+          board[i][j].show = "0";
         }
       }
     }
