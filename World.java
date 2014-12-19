@@ -50,7 +50,7 @@ public class World extends Thread {
     RobotCleaner robotCleaner = new RobotCleaner(3, world.height-1, 0, world);
     CleanerDistract cleanerDistract = new CleanerDistract(4, world.height-1, world.width-1, world);
 
-    Timer screen = new Timer(world);
+    Timer timer = new Timer();
 
     world.robots.add(robotPolluter);
     world.robots.add(polluterJumper);
