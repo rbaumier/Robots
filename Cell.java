@@ -16,7 +16,7 @@ public class Cell {
   }
 
   public void pollute() {
-    show = "5";
+    show = "9";
     state = "polluted";
   }
 

@@ -29,7 +29,7 @@ public class World extends Thread {
   }
 
   public boolean isValidCell(int x, int y) {
-    return x < height && x >= 0 && y < width && y >= 0;
+    return x < height && x >= 0 && y <= width+1 && y >= 0;
   }
 
   public Cell[][] fill(Cell[][] board) {
@@ -42,13 +42,6 @@ public class World extends Thread {
   }
 
   public void setPosition(int x, int y, Robot robot) {
-    for (int i = 0; i < height; i++) {
-      for (int j = 0; j < width; j++) {
-        if(Integer.parseInt(board[i][j].show) == robot.id) {
-          board[i][j].show = "0";
-        }
-      }
-    }
     board[x][y].addRobot(robot);
   }
 
