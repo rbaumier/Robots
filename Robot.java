@@ -1,4 +1,4 @@
-public abstract class Robot extends Thread{
+public abstract class Robot {
   public int id;
   public int x;
   public int y;
