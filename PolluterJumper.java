@@ -3,5 +3,10 @@ public class PolluterJumper extends RobotPolluter {
     super(num, x, y, world);
   }
 
-  // public void move() {}
+  public void move() {
+
+    // if(isFree(xn, yn)) {
+    //   setPosition(xn, yn, this);
+    // }
+  }
 }
