@@ -6,7 +6,7 @@ Who won ? Who's next ? You decide !
 
 -------------------------------------------------------------------------------------
 
-__model__
+__model__ (= monde)
 monde => liste de robots + liste de cases
 
 __timer__
@@ -18,8 +18,9 @@ il prend la forme while(true){
 }
 
 __controller__
-1) updateWorld()
-2) updateView
+1) calcule des modifications, mouvements ...
+2) updateWorld()
+3) updateView()
 (il doit connaitre le monde et la vue)
 déplacer, en fonction position autres robots -> j'abandonne déplacement ou j'essaie d'aller ailleurs.*
 
@@ -45,6 +46,6 @@ wc -l *.java
 
 déplacement
 - r1.déplacer() => modifie x,y de robot
-  -> random entre 1 et 4, si c'est 1, on essaie de le déplacer en haut à gauche, si c'est 2 en haut à droite, etc..., sinon xn=x-1, yn=y-2  => on peut faire différemment
-  -> if(libre(xn,yn)) -> x=xn, y=yn
+  -> pour cavalier : random entre 1 et 4, si c'est 1, on essaie de le déplacer en haut à gauche, si c'est 2 en haut à droite, etc..., sinon xn=x-1, yn=y-2  => on peut faire différemment
+  -> dans robot : if(libre(xn,yn)) -> x=xn, y=yn
 
