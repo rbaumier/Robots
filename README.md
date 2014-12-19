@@ -49,3 +49,6 @@ déplacement
   -> pour cavalier : random entre 1 et 4, si c'est 1, on essaie de le déplacer en haut à gauche, si c'est 2 en haut à droite, etc..., sinon xn=x-1, yn=y-2  => on peut faire différemment
   -> dans robot : if(libre(xn,yn)) -> x=xn, y=yn
 
+Si on veut faire propre on peut faire 3 packages : model, controller, view
+
+prof : 2 nettoyeurs héritent de robots, dans leur méthode déplacer il y a nettoyer.
