@@ -4,5 +4,5 @@ public class CleanerDistract extends RobotCleaner {
     super(num, x, y, world);
   }
 
-  public void move() {}
+  // public void move() {}
 }

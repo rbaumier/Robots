@@ -8,5 +8,5 @@ public class RobotCleaner extends Robot {
     world.board[x][y].clean();
   }
 
-  public void move() {}
+  // public void move() {}
 }

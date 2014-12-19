@@ -3,5 +3,5 @@ public class PolluterJumper extends RobotPolluter {
     super(num, x, y, world);
   }
 
-  public void move() {}
+  // public void move() {}
 }

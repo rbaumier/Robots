@@ -9,5 +9,5 @@ public class RobotPolluter extends Robot {
     world.board[x][y].pollute();
   }
 
-  public void move() {}
+  // public void move() {}
 }
