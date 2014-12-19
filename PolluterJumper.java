@@ -19,12 +19,12 @@ public class PolluterJumper extends RobotPolluter {
     int xn = x+pos.get(random.nextInt(3 - 0 + 1) + 0);
     int yn = x+pos.get(random.nextInt(3 - 0 + 1) + 0);
 
-    System.out.println(xn);
-    System.out.println(yn);
-    // if(isFree(xn, yn)) {
-    //   setPosition(xn, yn, this);
-    // } else {
-    //   move();
-    // }
+    if(world.isValidCell(xn, yn) && world.isFree(xn, yn)) {
+      x = xn;
+      y = yn;
+      world.setPosition(x, y, this);
+    } else {
+      move();
+    }
   }
 }
