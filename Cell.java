@@ -11,7 +11,7 @@ public class Cell {
     robot = null;
   }
 
-  public boolean isAvailable() {
+  public boolean isFree() {
     return state == "free";
   }
 
