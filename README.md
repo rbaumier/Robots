@@ -52,3 +52,46 @@ déplacement
 Si on veut faire propre on peut faire 3 packages : model, controller, view
 
 prof : 2 nettoyeurs héritent de robots, dans leur méthode déplacer il y a nettoyer.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+__Graphique__
+
+__EXEMPLE :__
+
+class testDessin extends JFrame
+class dessin extends JPanel
+
+main (mais mieux dans un thread) => testDessin F = new testDessin();
+F.setSize(..);
+f.add(new dessin());
+F.setVisible(true);
+while(true) {
+  F.repaint();
+  true{
+    Thread.sleep(1000);
+  } catch (Exception e) {
+    System.err.println(e);
+  }
+}
+
+repaint => appeler méthode PaintComponent (à override)
+
+__pour dessiner image :__
+@Override
+... PaintComponent(Graphic g) {
+  try {
+    File image = new File("/path/1.png");
+    BufferedImage img = ImageIO.read(image);
+    g.drawImage(img, 40, 40, this);
+  } catch (Exception e) {
+    System.err.println(e);
+  }
+}
+
+
+difficulté : il va falloir dessiner en fonction de la taille de la fenetre (pour que ca foire pas quand on redimensionne).
+- v1 : taille fixe
+- v2 : redimensionnement
+Dessiner le robot par dessus (si la case est sale, le robot sera par dessus)
