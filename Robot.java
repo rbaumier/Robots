@@ -13,7 +13,5 @@ public abstract class Robot {
     world = w;
   }
 
-  public void move() {
-    System.out.println(Integer.toString(id) + " is moving !");
-  }
+  public void move() {}
 }
