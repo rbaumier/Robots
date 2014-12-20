@@ -20,15 +20,15 @@ public class View {
   }
 
   public void refresh() {
-    System.out.println(repeat("---", world.width) + "-");
-    for (int i = 0; i < world.height; i++) {
-      System.out.print("|");
-      for (int j = 0; j < world.width; j++) {
-        System.out.print(" " + world.board[i][j].show + " ");
-      }
-      System.out.print("|");
-      System.out.println("");
-    }
-    System.out.println(repeat("---", world.width) + "-");
+    // System.out.println(repeat("---", world.width) + "-");
+    // for (int i = 0; i < world.height; i++) {
+    //   System.out.print("|");
+    //   for (int j = 0; j < world.width; j++) {
+    //     System.out.print(" " + world.board[i][j].show + " ");
+    //   }
+    //   System.out.print("|");
+    //   System.out.println("");
+    // }
+    // System.out.println(repeat("---", world.width) + "-");
   }
 }
