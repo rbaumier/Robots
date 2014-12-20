@@ -24,7 +24,7 @@ public class PolluterJumper extends RobotPolluter {
       x = xn;
       y = yn;
       // world.board[x][y].pollute();
-      world.setPosition(x, y, this);
+      world.use(x, y, this);
     } else {
       move();
     }
