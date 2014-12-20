@@ -41,10 +41,6 @@ public class World extends Thread {
     return board;
   }
 
-  public void use(int x, int y, Robot robot) {
-    board[x][y].addRobot(robot);
-  }
-
   public void free(int x, int y) {
     board[x][y].free();
   }

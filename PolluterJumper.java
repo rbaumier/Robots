@@ -23,8 +23,8 @@ public class PolluterJumper extends RobotPolluter {
     if(world.isValidCell(xn, yn) && world.isFree(xn, yn)) {
       x = xn;
       y = yn;
-      // world.board[x][y].pollute();
-      world.use(x, y, this);
+      world.board[x][y].pollute();
+      world.board[x][y].use(this);
     } else {
       move();
     }
