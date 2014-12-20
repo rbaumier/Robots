@@ -24,7 +24,7 @@ public class PolluterJumper extends RobotPolluter {
     int xn = x+pos.get(random.nextInt(3 - 0 + 1) + 0);
     int yn = x+pos.get(random.nextInt(3 - 0 + 1) + 0);
 
-    if(world.isValidCell(xn, yn) && world.isFree(xn, yn)) {
+    if(world.isValidCell(xn, yn) && world.board[xn][yn].isFree()) {
       x = xn;
       y = yn;
       world.board[x][y].pollute();

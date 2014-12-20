@@ -24,12 +24,8 @@ public class World extends Thread {
     return width <= 30 && height <= 20;
   }
 
-  public boolean isFree(int x, int y) {
-    return board[x][y].isFree();
-  }
-
   public boolean isValidCell(int x, int y) {
-    return x < height && x >= 0 && y <= width+1 && y >= 0;
+    return x < height && x >= 0  && y >= 0;
   }
 
   public Cell[][] fill(Cell[][] board) {
