@@ -25,6 +25,10 @@ public class Cell {
     show = "0";
   }
 
+  public void free() {
+    state = "free";
+  }
+
   public boolean isPolluted() {
     return state == "polluted";
   }
