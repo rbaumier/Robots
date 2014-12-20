@@ -14,4 +14,5 @@ public abstract class Robot {
   }
 
   public void move() {}
+  public void release() {}
 }

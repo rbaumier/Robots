@@ -9,13 +9,16 @@ public class Cell {
     robot = null;
   }
 
-  public void use(Robot robot) { robot = robot; }
-  public void free() { robot = null; }
-  public boolean isFree() { return robot == null; }
+  public void use(Robot robot) {
+    this.robot = robot;
+  }
 
-  public void pollute() { state = 1; }
-  public boolean isPolluted() { return state == 1; }
+  public void release() { this.robot = null; }
+  public boolean isFree() { return this.robot == null; }
 
-  public void clean() { state = 0; }
-  public boolean isClean() { return state == 0; }
+  public void pollute() { this.state = 1; }
+  public boolean isPolluted() { return this.state == 1; }
+
+  public void clean() { this.state = 0; }
+  public boolean isClean() { return this.state == 0; }
 }

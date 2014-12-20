@@ -14,6 +14,10 @@ public class PolluterJumper extends RobotPolluter {
     pos.add(2);
   }
 
+  public void release() {
+    world.board[x][y].release();
+  }
+
   public void move() {
     Random random = new Random();
 

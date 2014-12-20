@@ -41,10 +41,6 @@ public class World extends Thread {
     return board;
   }
 
-  public void free(int x, int y) {
-    board[x][y].free();
-  }
-
   public static void main(String[] args) {
     String speed = args.length == 0 ? "100" : args[0];
 

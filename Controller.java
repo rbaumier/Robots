@@ -11,6 +11,7 @@ public class Controller {
 
   public void update() {
     for(Robot r : world.robots) {
+      r.release();
       r.move();
     }
     view.refresh();
