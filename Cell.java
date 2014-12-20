@@ -18,5 +18,4 @@ public class Cell {
 
   public void clean() { state = 0; }
   public boolean isClean() { return state == 0; }
-
 }
