@@ -7,10 +7,6 @@ public class View {
     world = w;
   }
 
-  // public void run() {
-  //   show(500);
-  // }
-
   public String repeat(String toRepeat, int times) {
     String str = "";
     for (int i = 0; i < times; i++) {
@@ -19,16 +15,28 @@ public class View {
     return str;
   }
 
+  public String getCellState(Cell cell) {
+    if(!cell.isFree()) {
+      return Integer.toString(cell.robot.id);
+    }
+
+    if(cell.isClean()) {
+      return ".";
+    }
+
+    return "X";
+  }
+
   public void refresh() {
-    // System.out.println(repeat("---", world.width) + "-");
-    // for (int i = 0; i < world.height; i++) {
-    //   System.out.print("|");
-    //   for (int j = 0; j < world.width; j++) {
-    //     System.out.print(" " + world.board[i][j].show + " ");
-    //   }
-    //   System.out.print("|");
-    //   System.out.println("");
-    // }
-    // System.out.println(repeat("---", world.width) + "-");
+    System.out.println(repeat("---", world.width) + "-");
+    for (int i = 0; i < world.height; i++) {
+      System.out.print("|");
+      for (int j = 0; j < world.width; j++) {
+        System.out.print(" " + getCellState(world.board[i][j]) + " ");
+      }
+      System.out.print("|");
+      System.out.println("");
+    }
+    System.out.println(repeat("---", world.width) + "-");
   }
 }
