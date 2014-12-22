@@ -28,11 +28,11 @@ public class WorldPanel extends JPanel {
     int width = this.getWidth();
     int height = this.getHeight();
 
-    for(int x=0; x < width; x+=width/10) {
+    for(int x=0; x < width; x+=width/world.width) {
       g.drawLine(x, height, x, 0);
     }
 
-    for(int y=0; y < height; y+=height/10) {
+    for(int y=0; y < height; y+=height/world.height) {
       g.drawLine(0, y, width, y);
     }
   }
