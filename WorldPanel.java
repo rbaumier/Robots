@@ -20,24 +20,24 @@ public class WorldPanel extends JPanel {
   @Override
   public void paintComponent(Graphics g){
     super.paintComponent(g);
-    drawBoard(g);
-    drawRobots(g);
+
+    int offsetX = this.getWidth()/world.width;
+    int offsetY = this.getHeight()/world.height;
+    drawBoard(g, offsetX, offsetY);
+    drawRobots(g, offsetX, offsetY);
   }
 
-  public void drawBoard(Graphics g){
-    int width = this.getWidth();
-    int height = this.getHeight();
-
-    for(int x=0; x < width; x+=width/world.width) {
-      g.drawLine(x, height, x, 0);
+  public void drawBoard(Graphics g, int offsetX, int offsetY){
+    for(int x=0; x < this.getWidth(); x+=offsetX) {
+      g.drawLine(x, this.getHeight(), x, 0);
     }
 
-    for(int y=0; y < height; y+=height/world.height) {
-      g.drawLine(0, y, width, y);
+    for(int y=0; y < this.getHeight(); y+=offsetY) {
+      g.drawLine(0, y, this.getWidth(), y);
     }
   }
 
-  public void drawRobots(Graphics g) {
+  public void drawRobots(Graphics g, int offsetX, int offsetY) {
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
 
@@ -45,7 +45,14 @@ public class WorldPanel extends JPanel {
           Robot robot = world.board[i][j].robot;
           try {
             Image img = ImageIO.read(new File("img/clean.png"));
-            g.drawImage(img, robot.x*100, robot.y*100, getImageWidth(this.getWidth()), getImageHeight(this.getHeight()), this);
+            g.drawImage(img,
+              robot.x*offsetX,
+              robot.y*offsetY,
+              getImageWidth(this.getWidth()),
+              getImageHeight(this.getHeight()),
+              this
+            );
+
           } catch (IOException e) {
             e.printStackTrace();
           }
