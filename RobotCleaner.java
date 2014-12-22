@@ -6,5 +6,4 @@ public class RobotCleaner extends Robot {
   public void clean() {
     world.board[x][y].clean();
   }
-
 }

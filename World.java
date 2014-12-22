@@ -40,17 +40,17 @@ public class World extends Thread {
   public static void main(String[] args) {
     String speed = args.length == 0 ? "100" : args[0];
 
-    World world = new World(10,5);
+    World world = new World(10,7);
 
     RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
-    // CleanerDistract cleanerDistract = new CleanerDistract(, world.height-1, world.width-1, world);
-    // RobotPolluter robotPolluter = new RobotPolluter(1, 0, 0,  world);
-    // PolluterJumper polluterJumper = new PolluterJumper(2, 0, world.width-1, world);
+    CleanerDistract cleanerDistract = new CleanerDistract(2, 0, 1, world);
+    RobotPolluter robotPolluter = new RobotPolluter(3, 0, 2,  world);
+    PolluterJumper polluterJumper = new PolluterJumper(4, 0, 3, world);
 
-    // world.robots.add(robotPolluter);
-    // world.robots.add(polluterJumper);
+    world.robots.add(robotPolluter);
+    world.robots.add(polluterJumper);
     world.robots.add(robotCleaner);
-    // world.robots.add(cleanerDistract);
+    world.robots.add(cleanerDistract);
 
     View view = new View(world);
     Controller ctrl = new Controller(world, view);
