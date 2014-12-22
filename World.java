@@ -52,8 +52,31 @@ public class World extends Thread {
     world.robots.add(robotPolluter);
     // world.robots.add(polluterJumper);
 
-    View view = new View(world);
-    Controller ctrl = new Controller(world, view);
+    View v = new View();
+    v.setSize(1000, 700);
+    v.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
+    v.setContentPane(new JPanelDessin());
+    v.setVisible(true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Controller ctrl = new Controller(world, v);
 
     Timer timer = new Timer(ctrl);
     timer.start(Integer.parseInt(speed));

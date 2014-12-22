@@ -14,6 +14,7 @@ public class Controller {
       r.release();
       r.move();
     }
-    view.refresh();
+    // view.refresh();
+    // view.repaint();
   }
 }
