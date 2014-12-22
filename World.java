@@ -25,7 +25,7 @@ public class World extends Thread {
   }
 
   public boolean isValidCell(int x, int y) {
-    return x < height && x >= 0  && y >= 0;
+    return x < height && x >= 0  && y >= 0 && y < height;
   }
 
   public Cell[][] fill(Cell[][] board) {
@@ -40,17 +40,17 @@ public class World extends Thread {
   public static void main(String[] args) {
     String speed = args.length == 0 ? "100" : args[0];
 
-    World world = new World(7,4);
+    World world = new World(10,5);
 
-    RobotPolluter robotPolluter = new RobotPolluter(1, 0, 0,  world);
-    PolluterJumper polluterJumper = new PolluterJumper(2, 0, world.width-1, world);
-    RobotCleaner robotCleaner = new RobotCleaner(3, world.height-1, 0, world);
-    CleanerDistract cleanerDistract = new CleanerDistract(4, world.height-1, world.width-1, world);
+    RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
+    // CleanerDistract cleanerDistract = new CleanerDistract(, world.height-1, world.width-1, world);
+    // RobotPolluter robotPolluter = new RobotPolluter(1, 0, 0,  world);
+    // PolluterJumper polluterJumper = new PolluterJumper(2, 0, world.width-1, world);
 
-    world.robots.add(robotPolluter);
-    world.robots.add(polluterJumper);
+    // world.robots.add(robotPolluter);
+    // world.robots.add(polluterJumper);
     world.robots.add(robotCleaner);
-    world.robots.add(cleanerDistract);
+    // world.robots.add(cleanerDistract);
 
     View view = new View(world);
     Controller ctrl = new Controller(world, view);

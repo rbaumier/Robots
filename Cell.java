@@ -9,9 +9,7 @@ public class Cell {
     robot = null;
   }
 
-  public void use(Robot robot) {
-    this.robot = robot;
-  }
+  public void use(Robot robot) { this.robot = robot; }
 
   public void release() { this.robot = null; }
   public boolean isFree() { return this.robot == null; }
