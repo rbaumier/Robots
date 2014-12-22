@@ -4,14 +4,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class JPanelDessin extends JPanel {
+public class BoardPanel extends JPanel {
   public World world;
 
   @Override
   public void paintComponent(Graphics g){
     super.paintComponent(g);
-    //x1, y1, x2, y2
-
     drawBoard(g);
   }
 

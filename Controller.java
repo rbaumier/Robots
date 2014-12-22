@@ -15,6 +15,6 @@ public class Controller {
       r.move();
     }
     // view.refresh();
-    // view.repaint();
+    view.repaint();
   }
 }

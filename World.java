@@ -55,7 +55,8 @@ public class World extends Thread {
     View v = new View();
     v.setSize(1000, 700);
     v.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
-    v.setContentPane(new JPanelDessin());
+    v.setContentPane(new BoardPanel());
+    v.setContentPane(new RobotPanel());
     v.setVisible(true);
 
 
