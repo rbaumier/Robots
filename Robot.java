@@ -14,7 +14,6 @@ public abstract class Robot {
   }
 
   public void move() {
-    world.board[x][y].release();
     y += 1;
     if(y == world.width) {
       y = 0;
@@ -24,5 +23,9 @@ public abstract class Robot {
       x = 0;
     }
     world.board[x][y].use(this);
+  }
+
+  public void release() {
+    world.board[x][y].release();
   }
 }
