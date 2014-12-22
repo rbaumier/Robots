@@ -39,7 +39,7 @@ public class World extends Thread {
 
   public static void main(String[] args) {
     String speed = args.length == 0 ? "100" : args[0];
-    World world = new World(10, 7);
+    World world = new World(15, 7);
 
     // RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
     CleanerDistract cleanerDistract = new CleanerDistract(2, 0, 1, world);

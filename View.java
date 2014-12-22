@@ -9,8 +9,7 @@ public class View extends JFrame {
     this.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
 
-    this.setContentPane(new BoardPanel());
-    // this.setContentPane(new RobotPanel(w));
+    this.setContentPane(new WorldPanel(w));
 
     this.setVisible(true);
   }
