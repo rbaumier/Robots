@@ -6,4 +6,17 @@ public class RobotCleaner extends Robot {
   public void clean() {
     world.board[x][y].clean();
   }
+
+  public void move() {
+    y += 1;
+    if(y == world.width) {
+      y = 0;
+      x += 1;
+    }
+    if(x == world.height) {
+      x = 0;
+    }
+    use();
+    clean();
+  }
 }
