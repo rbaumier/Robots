@@ -4,17 +4,16 @@ public class View extends JFrame {
   public World world;
 
   public View(World w) {
-    this.setSize(1000, 700);
+    this.setSize(w.width*100, w.height*100);
     this.setTitle("Sarah Connor ?");
     this.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
+
     this.setContentPane(new BoardPanel());
-    this.setContentPane(new RobotPanel(w));
+    // this.setContentPane(new RobotPanel(w));
+
     this.setVisible(true);
-
   }
-
-
 
 
   // public String repeat(String toRepeat, int times) {

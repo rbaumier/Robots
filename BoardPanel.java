@@ -13,11 +13,14 @@ public class BoardPanel extends JPanel {
 
   public void drawBoard(Graphics g){
     int width = this.getWidth();
-    for(int x=0; x < width; x+=100) {
-      for(int y=0; y < width; y+=100) {
-        g.drawLine(x, this.getHeight(), x, 0);
-        g.drawLine(0, y, this.getWidth(), y);
-      }
+    int height = this.getHeight();
+
+    for(int x=0; x < width; x+=width/10) {
+      g.drawLine(x, height, x, 0);
+    }
+
+    for(int y=0; y < height; y+=height/10) {
+      g.drawLine(0, y, width, y);
     }
   }
 }
