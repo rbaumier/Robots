@@ -3,10 +3,15 @@ import javax.swing.JFrame;
 public class View extends JFrame {
   public World world;
 
-  public View(){}
-
   public View(World w) {
-    world = w;
+    this.setSize(1000, 700);
+    this.setTitle("Sarah Connor ?");
+    this.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
+    this.setContentPane(new BoardPanel());
+    this.setContentPane(new RobotPanel(w));
+    this.setVisible(true);
+
   }
 
 
