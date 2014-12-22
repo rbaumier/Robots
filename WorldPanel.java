@@ -24,7 +24,7 @@ public class WorldPanel extends JPanel {
     int offsetX = this.getWidth()/world.width;
     int offsetY = this.getHeight()/world.height;
     drawBoard(g, offsetX, offsetY);
-    drawRobots(g, offsetX, offsetY);
+    drawRobotsAndWaste(g, offsetX, offsetY);
   }
 
   public void drawBoard(Graphics g, int offsetX, int offsetY){
@@ -37,15 +37,22 @@ public class WorldPanel extends JPanel {
     }
   }
 
-  public void drawRobots(Graphics g, int offsetX, int offsetY) {
+  public void drawRobotsAndWaste(Graphics g, int offsetX, int offsetY) {
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
         if(!world.board[i][j].isFree()) {
-          Robot robot = world.board[i][j].robot;
           try {
-            Image img = ImageIO.read(new File("img/clean.png"));
-            g.drawImage(img, robot.x*offsetX, robot.y*offsetY, this);
+            Image rb = ImageIO.read(new File("img/clean.png"));
+            g.drawImage(rb, j*offsetX, i*offsetY, this);
 
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+        else if(world.board[i][j].isPolluted()) {
+         try {
+            Image waste = ImageIO.read(new File("img/waste.png"));
+            g.drawImage(waste, j*offsetX, i*offsetY, this);
           } catch (IOException e) {
             e.printStackTrace();
           }

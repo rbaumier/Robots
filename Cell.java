@@ -1,6 +1,4 @@
 public class Cell {
-  public int x;
-  public int y;
   public int state; // 0:clean, 1:polluted
   public Robot robot;
 

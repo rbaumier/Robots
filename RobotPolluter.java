@@ -6,17 +6,17 @@ public class RobotPolluter extends Robot {
   }
 
   public void pollute() {
-    world.board[x][y].pollute();
+    world.board[y][x].pollute();
   }
 
   public void move() {
-    y += 1;
-    if(y == world.width) {
-      y = 0;
-      x += 1;
-    }
-    if(x == world.height) {
+    x += 1;
+    if(x == world.width) {
       x = 0;
+      y += 1;
+    }
+    if(y == world.height) {
+      y = 0;
     }
     use();
     pollute();

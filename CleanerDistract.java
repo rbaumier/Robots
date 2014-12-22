@@ -6,9 +6,9 @@ public class CleanerDistract extends RobotCleaner {
   }
 
   public void clean() {
-    if(world.board[x][y].isPolluted()) {
+    if(world.board[y][x].isPolluted()) {
       if(canClean) {
-        world.board[x][y].clean();
+        world.board[y][x].clean();
         canClean = false;
       } else {
         canClean = true;
