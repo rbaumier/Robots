@@ -13,17 +13,11 @@ public abstract class Robot {
     world = w;
   }
 
-  public void move() {
-    y += 1;
-    if(y == world.width) {
-      y = 0;
-      x += 1;
-    }
-    if(x == world.height) {
-      x = 0;
-    }
+  public void use() {
     world.board[x][y].use(this);
   }
+
+  public void move() {}
 
   public void release() {
     world.board[x][y].release();
