@@ -40,18 +40,11 @@ public class WorldPanel extends JPanel {
   public void drawRobots(Graphics g, int offsetX, int offsetY) {
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
-
         if(!world.board[i][j].isFree()) {
           Robot robot = world.board[i][j].robot;
           try {
             Image img = ImageIO.read(new File("img/clean.png"));
-            g.drawImage(img,
-              robot.x*offsetX,
-              robot.y*offsetY,
-              getImageWidth(this.getWidth()),
-              getImageHeight(this.getHeight()),
-              this
-            );
+            g.drawImage(img, robot.x*offsetX, robot.y*offsetY, this);
 
           } catch (IOException e) {
             e.printStackTrace();

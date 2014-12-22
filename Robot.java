@@ -14,12 +14,12 @@ public abstract class Robot {
   }
 
   public void use() {
-    world.board[x][y].use(this);
+    world.board[y][x].use(this);
   }
 
   public void move() {}
 
   public void release() {
-    world.board[x][y].release();
+    world.board[y][x].release();
   }
 }
