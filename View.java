@@ -5,7 +5,7 @@ public class View extends JFrame {
 
   public View(World w) {
     this.setSize(w.width*100, w.height*100);
-    this.setTitle("Sarah Connor ?");
+    this.setTitle("Avengers - The movie");
     this.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
 
