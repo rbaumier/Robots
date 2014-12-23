@@ -38,7 +38,9 @@ public class World extends Thread {
   }
 
   public static void main(String[] args) {
-    World world = new World(15, 6);
+    String envX = args.length == 0 ? "10" : args[0];
+    String envY = args.length <= 1 ? "6" : args[1];
+    World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
 
     RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
     CleanerDistract cleanerDistract = new CleanerDistract(2, 1, 0, world);
