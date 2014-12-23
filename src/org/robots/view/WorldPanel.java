@@ -53,7 +53,7 @@ public class WorldPanel extends JPanel {
         if(!world.board[i][j].isFree()) {
           int id = world.board[i][j].robot.id;
           try {
-            Image rb = ImageIO.read(new File("img/" + id + ".png"));
+            Image rb = ImageIO.read(getClass().getResource("img/" + id + ".png"));
             g.drawImage(rb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
           } catch (IOException e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class WorldPanel extends JPanel {
         }
         else if(world.board[i][j].isPolluted()) {
          try {
-            Image bomb = ImageIO.read(new File("img/bomb.png"));
+            Image bomb = ImageIO.read(getClass().getResource("img/bomb.png"));
             g.drawImage(bomb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
           } catch (IOException e) {
             e.printStackTrace();
