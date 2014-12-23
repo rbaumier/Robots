@@ -95,3 +95,12 @@ difficulté : il va falloir dessiner en fonction de la taille de la fenetre (pou
 - v1 : taille fixe
 - v2 : redimensionnement
 Dessiner le robot par dessus (si la case est sale, le robot sera par dessus)
+
+
+
+
+
+
+Problèmes :
+Si main class not found :
+CLASSPATH=/www/java/Robots/repo/src; export CLASSPATH;

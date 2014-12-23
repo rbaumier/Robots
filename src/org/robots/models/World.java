@@ -48,13 +48,13 @@ public class World extends Thread {
     String envY = args.length <= 1 ? "6" : args[1];
     World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
 
-    // RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
-    CleanerDistract cleanerDistract = new CleanerDistract(2, 0, world.width-1, world);
+    RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
+    // CleanerDistract cleanerDistract = new CleanerDistract(2, 0, world.width-1, world);
     // RobotPolluter robotPolluter = new RobotPolluter(3, 2, 0,  world);
     // PolluterJumper polluterJumper = new PolluterJumper(4, 3, 0, world);
 
-    // world.robots.add(robotCleaner);
-    world.robots.add(cleanerDistract);
+    world.robots.add(robotCleaner);
+    // world.robots.add(cleanerDistract);
     // world.robots.add(robotPolluter);
     // world.robots.add(polluterJumper);
 
