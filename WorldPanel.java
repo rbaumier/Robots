@@ -14,16 +14,17 @@ public class WorldPanel extends JPanel {
 
   public WorldPanel(World w) {
     world = w;
+    this.setBackground(new Color(0xECF0F1));
   }
 
   @Override
   public void paintComponent(Graphics g){
     super.paintComponent(g);
-
+    g.setColor(new Color(0x2C3E50));
     int offsetX = this.getWidth()/world.width;
     int offsetY = this.getHeight()/world.height;
     drawBoard(g, offsetX, offsetY);
-    drawRobotsAndWaste(g, offsetX, offsetY);
+    drawRobotsAndBombs(g, offsetX, offsetY);
   }
 
   public void drawBoard(Graphics g, int offsetX, int offsetY){
@@ -36,7 +37,7 @@ public class WorldPanel extends JPanel {
     }
   }
 
-  public void drawRobotsAndWaste(Graphics g, int offsetX, int offsetY) {
+  public void drawRobotsAndBombs(Graphics g, int offsetX, int offsetY) {
     int imgWidth = getImgDim(offsetX);
     int imgHeight = getImgDim(offsetY);
     for (int i = 0; i < world.height; i++) {
