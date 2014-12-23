@@ -10,6 +10,12 @@ public class RobotCleaner extends Robot {
   }
 
   public void move() {
+    moveFromRight();
+    use();
+    clean();
+  }
+
+  public void moveFromRight() {
 
   }
 }

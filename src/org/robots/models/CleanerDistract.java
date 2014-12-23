@@ -8,9 +8,9 @@ public class CleanerDistract extends RobotCleaner {
   }
 
   public void move() {
-    x += 1;
-    if(x == world.width) {
-      x = 0;
+    x -= 1;
+    if(x == -1) {
+      x = world.width-1;
       y += 1;
     }
     if(y == world.height) {
