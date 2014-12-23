@@ -1,3 +1,5 @@
+package org.robots.models;
+
 public class RobotPolluter extends Robot {
   public int startCol;
 

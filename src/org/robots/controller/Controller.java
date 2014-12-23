@@ -1,3 +1,8 @@
+package org.robots.controller;
+
+import org.robots.models.*;
+import org.robots.view.*;
+
 public class Controller {
   public World world;
   public View view;

@@ -1,3 +1,7 @@
+package org.robots.view;
+
+import org.robots.models.*;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;

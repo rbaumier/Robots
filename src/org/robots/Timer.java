@@ -1,3 +1,5 @@
+import org.robots.controller.*;
+
 public class Timer extends Thread {
   public Controller ctrl;
 

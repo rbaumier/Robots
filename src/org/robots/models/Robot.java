@@ -1,3 +1,5 @@
+package org.robots.models;
+
 public abstract class Robot {
   public int id;
   public int x;

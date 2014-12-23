@@ -1,3 +1,7 @@
+package org.robots.view;
+
+import org.robots.models.*;
+
 import javax.swing.JFrame;
 
 public class View extends JFrame {

@@ -1,3 +1,5 @@
+package org.robots.models;
+
 public class Cell {
   public int state; // 0:clean, 1:polluted
   public Robot robot;

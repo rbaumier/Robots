@@ -1,3 +1,5 @@
+package org.robots.models;
+
 public class CleanerDistract extends RobotCleaner {
   public boolean canClean = true;
 
