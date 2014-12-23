@@ -37,13 +37,15 @@ public class WorldPanel extends JPanel {
   }
 
   public void drawRobotsAndWaste(Graphics g, int offsetX, int offsetY) {
+    int imgWidth = getImgDim(offsetX);
+    int imgHeight = getImgDim(offsetY);
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
         if(!world.board[i][j].isFree()) {
           int id = world.board[i][j].robot.id;
           try {
             Image rb = ImageIO.read(new File("img/" + id + ".png"));
-            g.drawImage(rb, j*offsetX, i*offsetY, offsetX, offsetY, this);
+            g.drawImage(rb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
           } catch (IOException e) {
             e.printStackTrace();
           }
@@ -51,12 +53,16 @@ public class WorldPanel extends JPanel {
         else if(world.board[i][j].isPolluted()) {
          try {
             Image bomb = ImageIO.read(new File("img/bomb.png"));
-            g.drawImage(bomb, j*offsetX, i*offsetY, offsetX, offsetY, this);
+            g.drawImage(bomb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
           } catch (IOException e) {
             e.printStackTrace();
           }
         }
       }
     }
+  }
+
+  public int getImgDim(int offset) {
+    return offset-offset/4;
   }
 }
