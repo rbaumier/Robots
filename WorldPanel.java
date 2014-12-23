@@ -9,7 +9,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-
 public class WorldPanel extends JPanel {
   public World world;
 
@@ -41,31 +40,23 @@ public class WorldPanel extends JPanel {
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
         if(!world.board[i][j].isFree()) {
+          int id = world.board[i][j].robot.id;
           try {
-            Image rb = ImageIO.read(new File("img/clean.png"));
-            g.drawImage(rb, j*offsetX, i*offsetY, this);
-
+            Image rb = ImageIO.read(new File("img/" + id + ".png"));
+            g.drawImage(rb, j*offsetX, i*offsetY, offsetX, offsetY, this);
           } catch (IOException e) {
             e.printStackTrace();
           }
         }
         else if(world.board[i][j].isPolluted()) {
          try {
-            Image waste = ImageIO.read(new File("img/waste.png"));
-            g.drawImage(waste, j*offsetX, i*offsetY, this);
+            Image bomb = ImageIO.read(new File("img/bomb.png"));
+            g.drawImage(bomb, j*offsetX, i*offsetY, offsetX, offsetY, this);
           } catch (IOException e) {
             e.printStackTrace();
           }
         }
       }
     }
-  }
-
-  public int getImageWidth(int winWidth) {
-    return winWidth/world.width+2;
-  }
-
-  public int getImageHeight(int winHeight) {
-    return winHeight/world.height+2;
   }
 }

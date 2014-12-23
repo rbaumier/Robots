@@ -38,18 +38,17 @@ public class World extends Thread {
   }
 
   public static void main(String[] args) {
-    String speed = args.length == 0 ? "100" : args[0];
     World world = new World(15, 6);
 
-    // RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
+    RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
     CleanerDistract cleanerDistract = new CleanerDistract(2, 0, 0, world);
     RobotPolluter robotPolluter = new RobotPolluter(3, 1, 0,  world);
-    // PolluterJumper polluterJumper = new PolluterJumper(4, 0, 3, world);
+    PolluterJumper polluterJumper = new PolluterJumper(4, 0, 3, world);
 
-    // world.robots.add(robotCleaner);
+    world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
     world.robots.add(robotPolluter);
-    // world.robots.add(polluterJumper);
+    world.robots.add(polluterJumper);
 
     View v = new View(world);
 
@@ -57,6 +56,6 @@ public class World extends Thread {
     Controller ctrl = new Controller(world, v);
 
     Timer timer = new Timer(ctrl);
-    timer.start(Integer.parseInt(speed));
+    timer.start(1000);
   }
 }
