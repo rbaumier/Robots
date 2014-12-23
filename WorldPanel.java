@@ -1,9 +1,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
-import javax.swing.JPanel;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Color;
+import java.awt.BasicStroke;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -21,6 +21,10 @@ public class WorldPanel extends JPanel {
   public void paintComponent(Graphics g){
     super.paintComponent(g);
     g.setColor(new Color(0x2C3E50));
+
+    Graphics2D g2 = (Graphics2D) g;
+    g2.setStroke(new BasicStroke(2));
+
     int offsetX = this.getWidth()/world.width;
     int offsetY = this.getHeight()/world.height;
     drawBoard(g, offsetX, offsetY);
