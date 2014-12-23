@@ -15,7 +15,7 @@ public class PolluterJumper extends RobotPolluter {
   }
 
   public void release() {
-    world.board[x][y].release();
+    world.board[y][x].release();
   }
 
   // public void move() {
