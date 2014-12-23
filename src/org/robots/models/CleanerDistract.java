@@ -7,6 +7,19 @@ public class CleanerDistract extends RobotCleaner {
     super(num, x, y, world);
   }
 
+  public void move() {
+    x += 1;
+    if(x == world.width) {
+      x = 0;
+      y += 1;
+    }
+    if(y == world.height) {
+      y = 0;
+    }
+    use();
+    clean();
+  }
+
   public void clean() {
     if(world.board[y][x].isPolluted()) {
       if(canClean) {

@@ -10,15 +10,6 @@ public class RobotCleaner extends Robot {
   }
 
   public void move() {
-    x += 1;
-    if(x == world.width) {
-      x = 0;
-      y += 1;
-    }
-    if(y == world.height) {
-      y = 0;
-    }
-    use();
-    clean();
+
   }
 }
