@@ -41,9 +41,9 @@ public class World extends Thread {
     World world = new World(15, 6);
 
     RobotCleaner robotCleaner = new RobotCleaner(1, 0, 0, world);
-    CleanerDistract cleanerDistract = new CleanerDistract(2, 0, 0, world);
-    RobotPolluter robotPolluter = new RobotPolluter(3, 1, 0,  world);
-    PolluterJumper polluterJumper = new PolluterJumper(4, 0, 3, world);
+    CleanerDistract cleanerDistract = new CleanerDistract(2, 1, 0, world);
+    RobotPolluter robotPolluter = new RobotPolluter(3, 2, 0,  world);
+    PolluterJumper polluterJumper = new PolluterJumper(4, 3, 0, world);
 
     world.robots.add(robotCleaner);
     world.robots.add(cleanerDistract);
