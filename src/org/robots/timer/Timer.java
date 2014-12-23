@@ -1,3 +1,5 @@
+package org.robots.timer;
+
 import org.robots.controller.*;
 
 public class Timer extends Thread {
