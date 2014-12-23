@@ -1,5 +1,9 @@
 package org.robots.models;
 
+import org.robots.view.*;
+import org.robots.controller.*;
+import org.robots.timer.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +59,6 @@ public class World extends Thread {
     world.robots.add(polluterJumper);
 
     View v = new View(world);
-
 
     Controller ctrl = new Controller(world, v);
 
