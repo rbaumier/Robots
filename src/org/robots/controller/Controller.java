@@ -15,10 +15,13 @@ public class Controller {
   }
 
   public void update() {
-    for(Robot r : world.robots) {
+    for(Robot r : getWorld().getRobots()) {
       r.release();
       r.move();
     }
     view.repaint();
   }
+
+  public World getWorld() { return world; }
+  public View getView() { return view; }
 }

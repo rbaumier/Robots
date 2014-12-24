@@ -6,6 +6,6 @@ public class RobotPolluter extends Robot {
   }
 
   public void pollute() {
-    getWorld().board[getY()][getX()].pollute();
+    getWorld().getBoard()[getY()][getX()].pollute();
   }
 }

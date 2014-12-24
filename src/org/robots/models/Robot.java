@@ -16,13 +16,13 @@ public abstract class Robot {
   }
 
   public void use() {
-    world.board[y][x].use(this);
+    getWorld().getBoard()[y][x].use(this);
   }
 
   public void move() {}
 
   public void release() {
-    world.board[y][x].release();
+    getWorld().getBoard()[y][x].release();
   }
 
   public int getId() { return id; }

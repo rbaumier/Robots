@@ -15,7 +15,7 @@ public class Ultron extends RobotPolluter {
   }
 
   public void release() {
-    getWorld().board[getY()][getX()].release();
+    getWorld().getBoard()[getY()][getX()].release();
   }
 
   public void move() {

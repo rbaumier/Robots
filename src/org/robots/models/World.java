@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class World extends Thread {
-  public int width;
-  public int height;
-  public Cell[][] board;
-  public ArrayList<Robot> robots;
+  private int width;
+  private int height;
+  private Cell[][] board;
+  private ArrayList<Robot> robots;
 
   public World(){};
 
@@ -42,6 +42,16 @@ public class World extends Thread {
     }
     return board;
   }
+
+  public int getWidth() { return width; }
+  public void setWidth(int x){ width = x; }
+
+  public int getHeight() { return height; }
+  public void setHeight(int y){ height = y; }
+
+  public Cell[][] getBoard() { return board; }
+  public ArrayList<Robot> getRobots() { return robots; }
+
 
   public static void main(String[] args) {
     String envX = args.length == 0 ? "10" : args[0];

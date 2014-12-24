@@ -9,11 +9,11 @@ public class Loki extends RobotPolluter {
 
   public void move() {
     setX(getX() + 1);
-    if(getX() == getWorld().width) {
+    if(getX() == getWorld().getWidth()) {
       setX(0);
       setY(getY() + 1);
     }
-    if(getY() == getWorld().height) {
+    if(getY() == getWorld().getHeight()) {
       setY(0);
     }
     use();
