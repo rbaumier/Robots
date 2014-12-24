@@ -1,10 +1,10 @@
 package org.robots.models;
 
 public abstract class Robot {
-  public int id;
-  public int x;
-  public int y;
-  public World world;
+  private int id;
+  private int x;
+  private int y;
+  private World world;
 
   public Robot(){};
 
@@ -24,4 +24,18 @@ public abstract class Robot {
   public void release() {
     world.board[y][x].release();
   }
+
+  public int getId() { return id; }
+  public void setId(int num) { id = num; }
+
+  public int getX() { return x; }
+  public void setX(int newX) { x = newX; }
+
+  public int getY() { return y; }
+  public void setY(int newY) { y = newY; }
+
+  public World getWorld() { return world; }
+  public void setWorld(World w) { world = w; }
 }
+
+

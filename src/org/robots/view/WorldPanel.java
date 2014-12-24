@@ -49,7 +49,7 @@ public class WorldPanel extends JPanel {
     for (int i = 0; i < world.height; i++) {
       for (int j = 0; j < world.width; j++) {
         if(!world.board[i][j].isFree()) {
-          int id = world.board[i][j].robot.id;
+          int id = world.board[i][j].robot.getId();
           try {
             Image rb = ImageIO.read(getClass().getResource("img/" + id + ".png"));
             g.drawImage(rb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);

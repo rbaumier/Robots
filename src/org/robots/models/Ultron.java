@@ -15,7 +15,7 @@ public class Ultron extends RobotPolluter {
   }
 
   public void release() {
-    world.board[y][x].release();
+    getWorld().board[getY()][getX()].release();
   }
 
   public void move() {
@@ -25,12 +25,12 @@ public class Ultron extends RobotPolluter {
     int rAy = rAx == 0 ? 1 : 0;
     int rBy = rAx == 0 ? 1 : 0;
 
-    int xn = x + pos[rAx][rBx];
-    int yn = y + pos[rAy][rBy];
+    int xn = getX() + pos[rAx][rBx];
+    int yn = getY() + pos[rAy][rBy];
 
-    if(world.isValidCell(xn, yn)) {
-      x = xn;
-      y = yn;
+    if(getWorld().isValidCell(xn, yn)) {
+      setX(xn);
+      setY(yn);
       use();
       pollute();
     } else {
