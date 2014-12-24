@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class PolluterJumper extends RobotPolluter {
+public class Ultron extends RobotPolluter {
   public int[][] pos = {
     { -1, 1 }, {-2, 2}
   };
 
 
-  public PolluterJumper(int num, int x, int y, World world) {
+  public Ultron(int num, int x, int y, World world) {
     super(num, x, y, world);
   }
 

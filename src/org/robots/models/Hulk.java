@@ -1,9 +1,9 @@
 package org.robots.models;
 
-public class CleanerDistract extends RobotCleaner {
+public class Hulk extends RobotCleaner {
   public boolean canClean = true;
 
-  public CleanerDistract(int num, int x, int y, World world) {
+  public Hulk(int num, int x, int y, World world) {
     super(num, x, y, world);
   }
 
@@ -17,13 +17,13 @@ public class CleanerDistract extends RobotCleaner {
       y = 0;
     }
     use();
-    clean();
+    cleanIfPossible();
   }
 
-  public void clean() {
+  public void cleanIfPossible() {
     if(world.board[y][x].isPolluted()) {
       if(canClean) {
-        world.board[y][x].clean();
+        clean();
         canClean = false;
       } else {
         canClean = true;
