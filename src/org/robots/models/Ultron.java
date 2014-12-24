@@ -9,6 +9,7 @@ public class Ultron extends RobotPolluter {
     { -1, 1 }, {-2, 2}
   };
 
+  public Ultron() {}
 
   public Ultron(int num, int x, int y, World world) {
     super(num, x, y, world);

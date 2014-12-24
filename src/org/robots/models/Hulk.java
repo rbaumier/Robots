@@ -3,6 +3,8 @@ package org.robots.models;
 public class Hulk extends RobotCleaner {
   public boolean canClean = true;
 
+  public Hulk() {}
+
   public Hulk(int num, int x, int y, World world) {
     super(num, x, y, world);
   }

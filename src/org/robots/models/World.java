@@ -13,7 +13,7 @@ public class World extends Thread {
   private Cell[][] board;
   private ArrayList<Robot> robots;
 
-  public World(){};
+  public World(){}
 
   public World(int x, int y) {
     if(hasCorrectSize(x, y)) {

@@ -6,7 +6,7 @@ public abstract class Robot {
   private int y;
   private World world;
 
-  public Robot(){};
+  public Robot(){}
 
   public Robot(int num, int coordY, int coordX, World w) {
     id = num;

@@ -5,6 +5,9 @@ import org.robots.models.*;
 import javax.swing.JFrame;
 
 public class View extends JFrame {
+
+  public View() {}
+
   public View(World w) {
     this.setSize(w.getWidth()*100, w.getHeight()*100);
     this.setTitle("Avengers - The movie");

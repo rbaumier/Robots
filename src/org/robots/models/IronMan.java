@@ -1,6 +1,8 @@
 package org.robots.models;
 
 public class IronMan extends RobotCleaner {
+  public IronMan() {}
+
   public IronMan(int num, int x, int y, World world) {
     super(num, x, y, world);
   }

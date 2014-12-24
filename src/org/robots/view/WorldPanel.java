@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 public class WorldPanel extends JPanel {
   private World world;
 
+  public WorldPanel() {}
+
   public WorldPanel(World w) {
     world = w;
     this.setBackground(new Color(0xECF0F1));
