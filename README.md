@@ -4,7 +4,7 @@ As a first java project ever, I did a robots game. There is 2 kinds of robots : 
 Polluters have to pollute cell and cleaners have to ... clean it.
 
 I adapted this game by replacing robots by marvel superheros :)<br><br>
-![World](docs/img/world.gif =250x250)
+![World](docs/img/world.gif)
 <br>
 
 # Heroes
@@ -46,8 +46,8 @@ following parameters :
 + refresh time : 100ms (default 1000ms)
 
 ### Usage
-In /src/org/robots :  
-1. ``javac */**.java``  
+In /src/org/robots :
+1. ``javac */**.java``
 2. ``java org.robots.models.World {width} {height} {refreshTime}``
 
 ### Block free
@@ -56,5 +56,5 @@ Robots move in such a way that they can block each others. You can try for examp
 
 ### Troubleshooting :
 
-"Error: Could not find or load main class org.robots.models.World"  
+"Error: Could not find or load main class org.robots.models.World"
   -> CLASSPATH=/path/to/project/Robots/src; export CLASSPATH;
