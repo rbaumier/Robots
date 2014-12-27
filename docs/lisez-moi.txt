@@ -20,6 +20,7 @@ Ce que j'ai cherché à faire :
 - Découper au maximum les différentes parties du programme en utilisant le modèle MVC (Modèle-Vue-Controlleur).
 - Eviter la duplication de code. En utilisant par exemple l'héritage entre les différents robots ou en décomposant le code en plusieurs fonctions réutilisables.
 - Utiliser des images de robots bien distinctes les unes des autres ainsi qu'une image de déchêts simple n'explosant pas les yeux.
+- Découper au maximum les tâches à effectuer lors de l'avancement du projet. Pour cela, j'ai utilisé l'application web Trello. Elle m'a obligé à faire des tâches les plus petites possibles. Chaque commit respectait donc une tâche précise.
 
 À améliorer car manque de temps :
 - Meilleure gestion des cases libres pour ultron. Actuellement il n'a qu'une seule chance : si la case qu'il a choisit est occupé, il ne va rien faire. Il faudrait le faire réessayer tant qu'il tombe sur des cases occupées et gérer le cas où il ne peut pas bouger du tout.

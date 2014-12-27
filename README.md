@@ -56,5 +56,5 @@ Robots move in such a way that they can block each others. You can try for examp
 
 ### Troubleshooting :
 
-"Error: Could not find or load main class org.robots.models.World"
+"Error: Could not find or load main class org.robots.models.World"  
   -> CLASSPATH=/path/to/project/Robots/src; export CLASSPATH;
