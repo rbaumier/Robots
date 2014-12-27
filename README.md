@@ -56,7 +56,7 @@ In /src/org/robots :
 
 Robots move in such a way that they can block each others. You can try for example with 1ms as refresh time, they will never block.
 
-### Troubleshooting :
+### Troubleshooting
 
 "Error: Could not find or load main class org.robots.models.World"  
 solution : ``CLASSPATH=/path/to/project/Robots/src; export CLASSPATH;``
