@@ -10,7 +10,7 @@ public class Hulk extends RobotCleaner {
   }
 
   public void move() {
-    setX(getX() -1 );
+    setX(getX() -1);
     if(getX() == -1) {
       setX(getWorld().getWidth()-1);
       setY(getY() + 1);

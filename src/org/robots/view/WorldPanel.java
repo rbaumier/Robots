@@ -48,10 +48,10 @@ public class WorldPanel extends JPanel {
   public void drawRobotsAndBombs(Graphics g, int offsetX, int offsetY) {
     int imgWidth = getImgDim(offsetX);
     int imgHeight = getImgDim(offsetY);
-    for (int i = 0; i < getWorld().getHeight(); i++) {
-      for (int j = 0; j < getWorld().getWidth(); j++) {
-        if(!getWorld().getBoard()[i][j].isFree()) {
-          int id = getWorld().getBoard()[i][j].robot.getId();
+    for (int i = 0; i < this.world.getHeight(); i++) {
+      for (int j = 0; j < this.world.getWidth(); j++) {
+        if(!this.world.getBoard()[i][j].isFree()) {
+          int id = this.world.getBoard()[i][j].robot.getId();
           try {
             Image rb = ImageIO.read(getClass().getResource("img/" + id + ".png"));
             g.drawImage(rb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
@@ -59,7 +59,7 @@ public class WorldPanel extends JPanel {
             e.printStackTrace();
           }
         }
-        else if(getWorld().getBoard()[i][j].isPolluted()) {
+        else if(this.world.getBoard()[i][j].isPolluted()) {
          try {
             Image bomb = ImageIO.read(getClass().getResource("img/bomb.png"));
             g.drawImage(bomb, j*offsetX+offsetX/8, i*offsetY+offsetY/8, imgWidth, imgHeight, this);
@@ -70,9 +70,6 @@ public class WorldPanel extends JPanel {
       }
     }
   }
-
-  public World getWorld() { return world; }
-  public void setWorld(World w) { world = w; }
 
   public int getImgDim(int offset) {
     return offset-offset/4;
