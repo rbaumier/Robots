@@ -4,7 +4,9 @@ As a first java project ever, I did a robots game. There is 2 kinds of robots : 
 Polluters have to pollute cell and cleaners have to ... clean it.
 
 I adapted this game by replacing robots by marvel superheros :)<br><br>
-![World](docs/img/world.gif)
+<p align="center">
+  <img src="docs/img/world.gif?raw=true" alt="World"/>
+</p>
 <br>
 
 # Heroes
@@ -46,8 +48,8 @@ following parameters :
 + refresh time : 100ms (default 1000ms)
 
 ### Usage
-In /src/org/robots :
-1. ``javac */**.java``
+In /src/org/robots :  
+1. ``javac */**.java``  
 2. ``java org.robots.models.World {width} {height} {refreshTime}``
 
 ### Block free
