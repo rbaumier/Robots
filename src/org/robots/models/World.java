@@ -73,6 +73,6 @@ public class World extends Thread {
     Controller ctrl = new Controller(world, v);
 
     Timer timer = new Timer(ctrl);
-    timer.start(1000);
+    timer.start(1);
   }
 }
