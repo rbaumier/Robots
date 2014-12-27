@@ -1,0 +1,29 @@
+Ce que j'ai fait :
+Le code se compose en 4 parties distinctes :
+- Les modèles :
+  - World : c'est le modèle principale, celui qui contient les instances des autres. La méthode main se trouve dedans, c'est donc cette classe à lancer pour éxecuter le programme.
+  - Cell : une case du tableau. L'attribut World.board contient toutes les cellules. Cette classe a été crée afin de gérer l'état d'une case (occupé/vide, polluée/propre).
+  - Robot (abstract) : la classe mère des robots. On y définit tous les attributs dont un robot a besoin et les méthodes qui seront partagées par tous les robots. Les robots sont gérés par le controlleurs, qui les fait bouger.
+    - RobotCleaner (abstract) : définit simplement la méthode clean() en plus.
+      - IronMan : se déplace en boustrophédon (voir README) de gauche à droite : il commence par descendre. Une fois qu'il est arrivé en bas, il passe à la colonne suivante et remonte. Lorsqu'il a terminé (parcouru toutes les cases), il retourne au début (x=0, y=0). Le fait de le faire repartir directement au point de départ est voulu. Dans le cas où il ferait demi-tour, IronMan pourrait se bloquer avec Hulk (lorsqu'IronMan change de colonne vers la gauche, Hulk pourrait vouloir être à sa gauche et vouloir aller vers la droite).
+      - Hulk  : bouge de gauche à droite. Quand il est arrivé au bout de la ligne, il passe à la suivante en revenant au début de la ligne.
+    - RobotPolluter (abstract) : de la même façon que le RobotCleaner, il implémente simplement la méthode pollute();
+      - Loki : Loki choisit une case au hasard pour se déplacer. Ce mode a été choisit pour démontrer l'ingéniosité du héros. Si la case est occupée, il en choisit une nouvelle.
+      - Ultron : il se déplace de la même façon que les cavaliers aux échecs.
+- La vue : gérée par le contrôlleur pour son rafraichissement, elle permet de créer une JFrame (dont elle hérite) et déclarer le WordPanel.
+  - WordPanel : hérite de JPanel, il permet de dessiner la map, les robots ainsi que les déchets grâce à la méthode paintComponent(). L'affichage est responsive (ou du moins elastique). La dimension des cases et des images est recalculée à chaque redimensionnement de la fenêtre.
+- Le controlleur : très simple, il permet de faire bouger les robots (en bouclant sur le tableau de robots du world) lors du tick du Timer et rafraichir la vue ensuite.
+- Le Timer (./timer/Timer.java), il permet de gérer le controlleur. Dans un thread à part, il va envoyé les instructions de rafraichissement au controlleur.
+
+Ce que j'ai cherché à faire :
+- j'ai mis des variables d'environnement afin de permettre une certaine souplesse à l'utilisateur et ne pas l'obliger à fouiller dans le code pour modifier un paramètre.
+- découper au maximum les différentes parties du programme en utilisant le modèle MVC (Modèle-Vue-Controlleur).
+- Eviter la duplication de code. En utilisant par exemple l'héritage entre les différents robots ou en décomposant le code en plusieurs fonctions réutilisables.
+
+À améliorer car manque de temps :
+- Meilleure gestion des cases libres pour ultron. Actuellement il n'a qu'une seule chance : si la case qu'il a choisit est occupé, il ne va rien faire. Il faudrait le faire réessayer tant qu'il tombe sur des cases occupées et gérer le cas où il ne peut pas bouger du tout.
+- Commenter le code : bien que j'ai essayé au maximum de donner des noms explicites à mes fonctions et variables, certaines parties ne sont pas assez compréhensibles et l'ajout de commentaires serait plus que nécessaire (en particulier les algorithme de mouvement).
+- Découvrir d'avantage swing/awt, j'aurais voulu ajouter un bouton permettant d'accélérer ou ralentir la vitesse. Cela aurait amené des problématiques intéressantes, comme par exemple modifier la valeur d'une variable sans avoir à relancer le programme.
+- Sécuriser d'avantage le code/meilleure gestion des erreurs. Je n'ai par exemple par essayer de créer plusieurs mondes/controllers et de tout lancer en même temps. Il aurait fallut créer par exemple des singletons pour World, Controller et View, et gérer les cas où il manque des dépendances. Afficher une erreur par exemple si on créer un controller sans lui attribuer de vue ou de world.
+- Meilleure relation entre le monde et les robots. Dans la logique, un robot ne devrait pas avoir à connaître son monde. Seul le monde devrait posséder les robots.
+- Meilleure distinction entre les méthodes de classe et d'instance.
