@@ -8,34 +8,41 @@ public class IronMan extends RobotCleaner {
   }
 
   public void move() {
-    if((getX() == getWorld().getWidth()-1) && ((getY() == 0 && getWorld().getWidth()%2 == 0) || (getWorld().getWidth() % 2 != 0 && getY() == getWorld().getHeight()-1))) {
-      if(getWorld().getWidth() % 2 == 0 && getY() == 0) {
-        moveIfFree(0,0);
+    int height = getWorld().getHeight();
+    int width = getWorld().getWidth();
+
+    int xn = getX();
+    int yn = getY();
+
+    if((xn == width-1) && ((yn == 0 && width%2 == 0) || (width % 2 != 0 && yn == height-1))) {
+      if(width % 2 == 0 && yn == 0) {
+        xn = 0;
+        yn = 0;
       } else {
-        if (getWorld().getWidth() % 2 != 0 && getY() == getWorld().getHeight()-1) {
-          moveIfFree(0,0);
+        if (width % 2 != 0 && yn == height-1) {
+          xn = 0;
+          yn = 0;
         }
       }
     } else {
-      if(getX()%2 == 0) {
-        if(getY() == getWorld().getHeight()-1) {
-          if(getX()%2 == 0) {
-            moveIfFree(getX() + 1, getY());
+      if(xn%2 == 0) {
+        if(yn == height-1) {
+          if(xn%2 == 0) {
+            xn += 1;
           } else {
-            moveIfFree(getX(), getY() - 1);
+            yn -= 1;
           }
         } else {
-          moveIfFree(getX(), getY() + 1);
+          yn += 1;
         }
       } else {
-        if(getY() == 0) {
-          moveIfFree(getX() + 1, getY());
+        if(yn == 0) {
+          xn += 1;
         } else {
-          moveIfFree(getX(), getY()-1);
+          yn -= 1;
         }
       }
     }
-    use();
-    clean();
+    moveIfFree(xn, yn);
   }
 }

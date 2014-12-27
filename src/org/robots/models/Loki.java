@@ -9,6 +9,10 @@ public class Loki extends RobotPolluter {
     super(num, x, y, world);
   }
 
-  public void move() {}
+  public void move() {
+    int xn = (int) Math.abs(Math.random() * getWorld().getWidth());
+    int yn = (int) Math.abs(Math.random() * getWorld().getHeight());
+    moveIfFree(xn, yn);
+  }
 }
 
