@@ -4,42 +4,50 @@ As a first java project ever, I did a robots game. There is 2 kinds of robots : 
 Polluters have to pollute cell and cleaners have to ... clean it.
 
 I adapted this game by replacing robots by marvel superheros :)<br><br>
-![World](docs/world.gif =250x250)
-<br>
-<br>
-
+![World](docs/world.gif =250x250)           
+   
+   
 # Heroes
 
 ###### Iron Man
-_"I'm Iron Man."_<br><br>
+_"I'm Iron Man."_
+
 ![IronMan](docs/ironMan.png "IronMan")
-<br>
-<br>
+
+
 ###### Loki
-_"Loki is unpredictable, he can spawn everywhere !"_ <br><br>
+_"Loki is unpredictable, he can spawn everywhere !"_    
+
 ![Loki](docs/loki.png "Loki")
-<br><br>
+
 
 ###### Hulk
-_"Because Hulk is angry, He can't do anything but go straight."_ <br><br>
+_"Because Hulk is angry, He can't do anything but go straight."_
+
 ![Hulk](docs/hulk.png "Hulk")
-<br><br>
+
 
 ###### Ultron
-_"Ultron is smart, he can move like knights in chess."_ <br><br>
+_"Ultron is smart, he can move like knights in chess."_  
+
 ![Ultron](docs/ultron.png "Ultron")
 
+### Environment variable
+You can manually specify world's width, height and refresh time while lauching the program.
 
-env variable
-width
-height
-speed
+__For example :__ ``java org.robots.models.World 8 5 100`` will initialize a world with the 
+following parameters :
+
++ width : 8 (default 7)
++ height : 5 (default 7)
++ refresh time : 100ms (default 1000ms)
+
 
 ### Block free
 
 Robots move in such a way that they can block each others. You can try for example with 1ms as refresh time, they will never block.
 
-### TroubleShouting :
+### Troubleshooting :
 
-Error: Could not find or load main class org.robots.models.World
+"Error: Could not find or load main class org.robots.models.World"  
   -> CLASSPATH=/path/to/project/Robots/src; export CLASSPATH;

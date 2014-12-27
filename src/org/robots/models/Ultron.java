@@ -6,17 +6,13 @@ import java.util.Random;
 
 public class Ultron extends RobotPolluter {
   public int[][] pos = {
-    { -1, 1 }, {-2, 2}
+    {-1, 1}, {-2, 2}
   };
 
   public Ultron() {}
 
   public Ultron(int num, int x, int y, World world) {
     super(num, x, y, world);
-  }
-
-  public void release() {
-    getWorld().getBoard()[getY()][getX()].release();
   }
 
   public void move() {
@@ -31,11 +27,8 @@ public class Ultron extends RobotPolluter {
 
     if(getWorld().isValidCell(xn, yn)) {
       moveIfFree(xn, yn);
-      use();
-      pollute();
     } else {
       move();
     }
-
   }
 }

@@ -61,7 +61,7 @@ public class World extends Thread {
     World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
 
     IronMan ironMan = new IronMan(1, 0, 0, world);
-    Hulk hulk       = new Hulk(2, 0, world.width-1, world);
+    Hulk hulk       = new Hulk(2, 0, 0, world);
     Loki loki       = new Loki(3, 2, 0,  world);
     Ultron ultron   = new Ultron(4, 3, 0, world);
 

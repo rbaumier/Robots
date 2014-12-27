@@ -1,0 +1,3 @@
+pourquoi j'ai choisi le mvc ?
+j'ai mis des variables d'environnement
+à Améliorer
