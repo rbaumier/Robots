@@ -54,8 +54,8 @@ public class World extends Thread {
 
 
   public static void main(String[] args) {
-    String envX = args.length == 0 ? "10" : args[0];
-    String envY = args.length <= 1 ? "6" : args[1];
+    String envX = args.length == 0 ? "7" : args[0];
+    String envY = args.length <= 1 ? "7" : args[1];
     String speed = args.length <= 2 ? "1000" : args[2];
 
     World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
