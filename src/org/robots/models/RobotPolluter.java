@@ -1,6 +1,6 @@
 package org.robots.models;
 
-public class RobotPolluter extends Robot {
+public abstract class RobotPolluter extends Robot {
 
   public RobotPolluter(){}
 
