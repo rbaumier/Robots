@@ -5,7 +5,7 @@ Polluters have to pollute cell and cleaners have to ... clean it.
 
 I adapted this game by replacing robots by marvel superheros :)<br><br>
 ![World](docs/img/world.gif =250x250)
-
+<br>
 
 # Heroes
 
@@ -31,6 +31,9 @@ _"Because Hulk is angry, He can't do anything but go straight."_
 _"Ultron is smart, he can move like knights in chess."_
 
 ![Ultron](docs/img/ultron.png "Ultron")
+<br><br>
+
+# Project
 
 ### Environment variable
 You can manually specify world's width, height and refresh time while lauching the program.
@@ -43,7 +46,9 @@ following parameters :
 + refresh time : 100ms (default 1000ms)
 
 ### Usage
-
+In /src/org/robots :  
+1. ``javac */**.java``  
+2. ``java org.robots.models.World {width} {height} {refreshTime}``
 
 ### Block free
 
