@@ -22,12 +22,12 @@ public class World extends Thread {
       robots = new ArrayList<Robot>();
       board = fill(new Cell[height][width]);
     } else {
-      System.out.println("La taille du tableau depasse la taille limite (20,30)");
+      System.out.println("World size should be between (5,5) and (20,30)");
     }
   }
 
   public static boolean hasCorrectSize(int width, int height) {
-    return width <= 30 && height <= 20;
+    return (width >= 5 && height >= 5) && (width <= 30 && height <= 20) ;
   }
 
   public boolean isValidCell(int x, int y) {
@@ -57,7 +57,6 @@ public class World extends Thread {
     String envX = args.length == 0 ? "10" : args[0];
     String envY = args.length <= 1 ? "6" : args[1];
     String speed = args.length <= 2 ? "1000" : args[2];
-
 
     World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
 
