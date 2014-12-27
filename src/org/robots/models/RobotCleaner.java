@@ -11,4 +11,8 @@ public class RobotCleaner extends Robot {
   public void clean() {
     getWorld().getBoard()[getY()][getX()].clean();
   }
+
+  public void polluteOrClean() {
+    clean();
+  }
 }

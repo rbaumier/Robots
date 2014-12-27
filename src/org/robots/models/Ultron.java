@@ -30,8 +30,7 @@ public class Ultron extends RobotPolluter {
     int yn = getY() + pos[rAy][rBy];
 
     if(getWorld().isValidCell(xn, yn)) {
-      setX(xn);
-      setY(yn);
+      moveIfFree(xn, yn);
       use();
       pollute();
     } else {

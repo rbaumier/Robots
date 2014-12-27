@@ -25,6 +25,18 @@ public abstract class Robot {
     getWorld().getBoard()[y][x].release();
   }
 
+  public void moveIfFree(int newX, int newY) {
+    if(getWorld().getBoard()[newY][newX].isFree()) {
+      release();
+      setX(newX);
+      setY(newY);
+      use();
+      polluteOrClean();
+    }
+  }
+
+  public void polluteOrClean() {}
+
   public int getId() { return id; }
   public void setId(int num) { id = num; }
 

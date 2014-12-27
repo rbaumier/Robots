@@ -16,7 +16,6 @@ public class Controller {
 
   public void update() {
     for(Robot r : getWorld().getRobots()) {
-      r.release();
       r.move();
     }
     view.repaint();

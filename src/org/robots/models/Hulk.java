@@ -10,19 +10,20 @@ public class Hulk extends RobotCleaner {
   }
 
   public void move() {
-    setX(getX() -1);
-    if(getX() == -1) {
-      setX(getWorld().getWidth()-1);
-      setY(getY() + 1);
+    int xn = getX()-1;
+    int yn = getY();
+    if(xn == -1) {
+      moveIfFree(getWorld().getWidth()-1, yn+1);
+    } else {
+      if(yn == getWorld().getHeight()) {
+        moveIfFree(xn, 0);
+      } else {
+        moveIfFree(xn, yn);
+      }
     }
-    if(getY() == getWorld().getHeight()) {
-      setY(0);
-    }
-    use();
-    cleanIfPossible();
   }
 
-  public void cleanIfPossible() {
+  public void polluteOrClean() {
     if(getWorld().getBoard()[getY()][getX()].isPolluted()) {
       if(canClean) {
         clean();
