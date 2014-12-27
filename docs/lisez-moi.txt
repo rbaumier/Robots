@@ -28,4 +28,4 @@ Ce que j'ai cherché à faire :
 - Meilleure relation entre le monde et les robots. Dans la logique, un robot ne devrait pas avoir à connaître son monde. Seul le monde devrait posséder les robots.
 - Meilleure distinction entre les méthodes de classe et d'instance.
 
-+ voir README
++ voir README :)
