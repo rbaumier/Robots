@@ -13,9 +13,7 @@ public class View extends JFrame {
     this.setTitle("Avengers - The movie");
     this.setDefaultCloseOperation(View.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
-
     this.setContentPane(new WorldPanel(w));
-
     this.setVisible(true);
   }
 }

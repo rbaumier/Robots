@@ -11,15 +11,15 @@ public class Timer extends Thread {
     ctrl = controller;
   }
 
-  public void start(int speed) {
-    run(speed);
+  public void start(int refreshTime) {
+    run(refreshTime);
   }
 
-  public void run(int speed) {
+  public void run(int refreshTime) {
     while(true) {
       ctrl.update();
       try {
-        Thread.sleep(speed);
+        Thread.sleep(refreshTime);
       } catch(InterruptedException ex) {
         Thread.currentThread().interrupt();
       }

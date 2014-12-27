@@ -54,9 +54,9 @@ public class World extends Thread {
 
 
   public static void main(String[] args) {
-    String envX = args.length == 0 ? "7" : args[0];
-    String envY = args.length <= 1 ? "7" : args[1];
-    String speed = args.length <= 2 ? "1000" : args[2];
+    String envX        = args.length == 0 ? "7" : args[0];
+    String envY        = args.length <= 1 ? "7" : args[1];
+    String refreshTime = args.length <= 2 ? "1000" : args[2];
 
     World world = new World(Integer.parseInt(envX), Integer.parseInt(envY));
 
@@ -75,6 +75,6 @@ public class World extends Thread {
     Controller ctrl = new Controller(world, v);
 
     Timer timer = new Timer(ctrl);
-    timer.start(Integer.parseInt(speed));
+    timer.start(Integer.parseInt(refreshTime));
   }
 }
