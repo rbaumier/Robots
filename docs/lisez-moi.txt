@@ -16,8 +16,8 @@ Le code se compose en 4 parties distinctes :
 - Le Timer (./timer/Timer.java), il permet de gérer le controlleur. Dans un thread à part, il va envoyé les instructions de rafraichissement au controlleur.
 
 Ce que j'ai cherché à faire :
-- j'ai mis des variables d'environnement afin de permettre une certaine souplesse à l'utilisateur et ne pas l'obliger à fouiller dans le code pour modifier un paramètre.
-- découper au maximum les différentes parties du programme en utilisant le modèle MVC (Modèle-Vue-Controlleur).
+- Utilisation des variables d'environnement afin de permettre une certaine souplesse à l'utilisateur et ne pas l'obliger à fouiller dans le code pour modifier un paramètre.
+- Découper au maximum les différentes parties du programme en utilisant le modèle MVC (Modèle-Vue-Controlleur).
 - Eviter la duplication de code. En utilisant par exemple l'héritage entre les différents robots ou en décomposant le code en plusieurs fonctions réutilisables.
 
 À améliorer car manque de temps :
@@ -27,3 +27,5 @@ Ce que j'ai cherché à faire :
 - Sécuriser d'avantage le code/meilleure gestion des erreurs. Je n'ai par exemple par essayer de créer plusieurs mondes/controllers et de tout lancer en même temps. Il aurait fallut créer par exemple des singletons pour World, Controller et View, et gérer les cas où il manque des dépendances. Afficher une erreur par exemple si on créer un controller sans lui attribuer de vue ou de world.
 - Meilleure relation entre le monde et les robots. Dans la logique, un robot ne devrait pas avoir à connaître son monde. Seul le monde devrait posséder les robots.
 - Meilleure distinction entre les méthodes de classe et d'instance.
+
++ voir README
